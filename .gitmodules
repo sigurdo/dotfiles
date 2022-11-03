@@ -1,3 +1,6 @@
 [submodule "fish_greeting_utils"]
 	path = fish_greeting_utils
 	url = git@github.com:sigurdo/fish_greeting_utils.git
+[submodule ".ohmyzsh"]
+	path = .ohmyzsh
+	url = git@github.com:sigurdo/ohmyzsh.git
