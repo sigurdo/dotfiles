@@ -27,6 +27,11 @@ function fish_prompt --description 'Write out the prompt'
     set -l status_color (set_color $fish_color_status)
     set -l statusb_color (set_color $bold_flag $fish_color_status)
     set -l prompt_status (__fish_print_pipestatus "[" "]" "|" "$status_color" "$statusb_color" $last_pipestatus)
+    set -l fish_vcs_prompt_result (fish_vcs_prompt)
+    # Do not print git prompt in home directory
+    if test (pwd) = ~
+      set fish_vcs_prompt_result ""
+    end
 
-  echo -n -s (set_color $color_cwd) (prompt_pwd) $normal (fish_vcs_prompt) $normal " "$prompt_status " " $suffix " "
+  echo -n -s (set_color $color_cwd) (prompt_pwd) $normal $fish_vcs_prompt_result $normal " "$prompt_status " " $suffix " "
 end
