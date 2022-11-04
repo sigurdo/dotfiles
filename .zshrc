@@ -66,14 +66,20 @@ ZSH_THEME="bananastronauten"
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
+typeset -A ZSH_HIGHLIGHT_STYLES
+ZSH_HIGHLIGHT_STYLES[arg0]='fg=green,bold'
+
 # Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
+    fzf
     git
+    shrink-path
     zsh-autosuggestions
+    zsh-syntax-highlighting
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -103,3 +109,47 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+greeting_ascii_art() {
+    ~/.fish_greeting_utils/target/release/main ~/.fish_greeting_utils arch
+}
+
+greeting_machine_description() {
+    # Print machine description
+    source /etc/os-release
+    distro=$NAME
+
+    # No point in writing "Arch Linux" when we can simply write "Arch"
+    if [[ $distro = *Arch* ]]
+    then
+        distro=Arch
+    fi
+
+    machine_description="%m $distro"
+
+    # Add "WSL" to machine description if it is a WSL kernel
+    if [[ $(uname -r) = *WSL* ]]
+    then
+        machine_description="$machine_description WSL"
+    fi
+
+    print -P "$machine_description"
+}
+
+greeting_date() {
+    date +"%A %-d. %B %Y"
+}
+
+greeting_time_of_day() {
+    date +"%R" | toilet -f future
+}
+
+greeting() {
+    greeting_ascii_art
+    printf $fg[white]      && greeting_machine_description | center
+    printf $fg_bold[white] && greeting_date | center
+    printf $fg_bold[blue]  && greeting_time_of_day | center
+    printf $reset_color
+}
+
+greeting
