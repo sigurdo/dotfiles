@@ -111,7 +111,16 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 greeting_ascii_art() {
-    ~/.fish_greeting_utils/target/release/main ~/.fish_greeting_utils arch
+    source /etc/os-release
+    image=fish
+    if [[ $NAME = *Arch* ]]
+    then
+        image=arch
+    elif [[ $NAME = *Ubuntu* ]]
+    then
+        image=ubuntu
+    fi
+    ~/.fish_greeting_utils/target/release/main ~/.fish_greeting_utils $image
 }
 
 greeting_machine_description() {
