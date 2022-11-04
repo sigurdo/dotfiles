@@ -5,6 +5,9 @@ cd ~
 # Clone submodules
 git submodule update --init --recursive
 
+# Install base-devel
+sudo pacman -S base-devel
+
 # Install yay
 git clone https://aur.archlinux.org/yay.git
 cd yay
@@ -25,7 +28,7 @@ rustup toolchain install stable
 yay -S --answerclean None --answerdiff None toilet toilet-fonts
 
 # Install fish_greeting_utils
-cd fish_greeting_utils
+cd .fish_greeting_utils
     cargo build --release
-    ln -s target/release/center /usr/bin/center
+    sudo ln -s $(pwd)/target/release/center /usr/bin/center
 cd ..

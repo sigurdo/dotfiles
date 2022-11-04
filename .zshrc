@@ -141,7 +141,12 @@ greeting_date() {
 }
 
 greeting_time_of_day() {
-    date +"%R" | toilet -f future
+    if [ -f "$(which toilet)" ]
+    then
+        date +"%R" | toilet -f future
+    else
+        date +"%R"
+    fi
 }
 
 greeting() {
