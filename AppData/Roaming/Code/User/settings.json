@@ -33,5 +33,7 @@
     "markdown-pdf.margin.bottom": "1in",
     "markdown-pdf.scale": 0.8,
     "git.suggestSmartCommit": false,
-    "window.zoomLevel": 2
+    "window.zoomLevel": 2,
+    "notebook.markup.fontSize": 12,
+    "notebook.outputFontSize": 12
 }
