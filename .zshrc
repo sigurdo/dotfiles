@@ -115,6 +115,23 @@ then
     source $HOME/.local.bashrc
 fi
 
+# Configure Windows compatible user-data-dir for the `code` command
+vscode_default_user_data_dir_option() {
+    if [[ $(uname -r) = *WSL* ]]
+    then
+        return
+    fi
+    if [[ "$@" = "*--user-data-dir*" ]]
+    then
+        return
+    fi
+    user_data_dir="$HOME/AppData/Roaming/Code/"
+    mkdir -p $user_data_dir
+    echo "--user-data-dir $user_data_dir"
+}
+
+alias code="code $(vscode_default_user_data_dir_option)"
+
 greeting_ascii_art() {
     source /etc/os-release
     image=fish
