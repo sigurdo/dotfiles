@@ -43,7 +43,7 @@ function fish_greeting
     # echo "Omar Arch WSL" | figlet -w $COLUMNS -f ~/figlet_fonts/small.flf -c
     # curl "wttr.in?0" --silent --max-time 3 | ~/fish_greeting_utils/target/release/center $COLUMNS
     set_color normal
-    ~/fish_greeting_utils/target/release/fish_greeting_utils fish arch chess
+    ~/.fish_greeting_utils/target/release/main ~/.fish_greeting_utils/ fish
     # date +"%A %-d. %B %Y" | figlet -w $COLUMNS -f ~/figlet_fonts/slscript.flf | ~/fish_greeting_utils/target/release/center $COLUMNS
     set_color brcyan
     echo "Omar Arch WSL" | center

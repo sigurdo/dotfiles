@@ -110,6 +110,11 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+if [ -f $HOME/.local.bashrc ]
+then
+    source $HOME/.local.bashrc
+fi
+
 greeting_ascii_art() {
     source /etc/os-release
     image=fish
@@ -159,11 +164,23 @@ greeting_time_of_day() {
 }
 
 greeting() {
-    greeting_ascii_art
-    printf $fg[white]      && greeting_machine_description | center
-    printf $fg_bold[white] && greeting_date | center
-    printf $fg_bold[blue]  && greeting_time_of_day | center
-    printf $reset_color
+    if [ -f $(which center) ]
+    then
+        greeting_ascii_art
+        printf $fg[white]      && greeting_machine_description | center
+        printf $fg_bold[white] && greeting_date | center
+        printf $fg_bold[blue]  && greeting_time_of_day | center
+        printf $reset_color
+    else
+        echo ""
+        printf $fg[white]      && greeting_machine_description
+        echo ""
+        printf $fg_bold[white] && greeting_date
+        echo ""
+        printf $fg_bold[blue]  && greeting_time_of_day
+        printf $reset_color
+        echo ""
+    fi
 }
 
 greeting
