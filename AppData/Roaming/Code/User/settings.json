@@ -22,7 +22,6 @@
     "rust-analyzer.inlayHints.chainingHints.enable": false,
     "rust-analyzer.inlayHints.closingBraceHints.enable": false,
     "rust-analyzer.inlayHints.parameterHints.enable": false,
-    "workbench.editor.enablePreview": false,
     "latex-workshop.latex.autoBuild.run": "onSave",
     "latex-workshop.docker.image.latex": "blang/latex",
     "latex-workshop.synctex.afterBuild.enabled": true,
@@ -33,7 +32,7 @@
     "markdown-pdf.margin.bottom": "1in",
     "markdown-pdf.scale": 0.8,
     "git.suggestSmartCommit": false,
-    "window.zoomLevel": 2,
-    "notebook.markup.fontSize": 12,
-    "notebook.outputFontSize": 12
+    "notebook.outputLineHeight": 1.2,
+    "workbench.editor.enablePreview": false,
+    "window.zoomLevel": 2
 }
