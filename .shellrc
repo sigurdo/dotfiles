@@ -1,0 +1,20 @@
+firefox_wsl() {
+    DOCUMENT_PATH=""
+    if [ -f "$1" ]
+    then
+        DOCUMENT_PATH=$(wslpath -w $1)
+    fi
+    FIREFOX_PATH="/mnt/c/Program Files/Mozilla Firefox/firefox.exe"
+    if [ -f "$FIREFOX_PATH" ]
+    then
+        "$FIREFOX_PATH" $DOCUMENT_PATH
+    else
+        echo "Couldn't find firefox executable at $FIREFOX_PATH"
+    fi
+}
+
+if [ ! -f "$(which firefox 2> /dev/null)" ]
+then
+    # If firefox command is not found, map WSL compatible firefox command.
+    alias firefox=firefox_wsl
+fi

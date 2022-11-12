@@ -110,9 +110,11 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-if [ -f $HOME/.local.bashrc ]
+source $HOME/.shellrc
+
+if [ -f $HOME/.local.shellrc ]
 then
-    source $HOME/.local.bashrc
+    source $HOME/.local.shellrc
 fi
 
 greeting_ascii_art() {
