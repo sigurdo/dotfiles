@@ -31,11 +31,34 @@
 			"    ${3:pass}",
 			"",
 			"if __name__ == \"__main__\":",
+			"    os.chdir(os.path.dirname(__file__))",
 			"    argument_parser = argparse.ArgumentParser()",
 			"    for parameter in inspect.signature(${1:main}).parameters:",
 			"        argument_parser.add_argument(parameter)",
 			"    arguments = argument_parser.parse_args()",
 			"    ${1:main}(**vars(arguments))",
+			""
+		],
+		"description": "Boilerplate for a Python script"
+	},
+	"Plac-based Python script boilerplate": {
+		"scope": "python",
+		"prefix": "plac-boilerplate",
+		"body": [
+			"#!/usr/bin/python3",
+			"",
+			"import inspect",
+			"import os",
+			"import subprocess",
+			"import time",
+			"import plac",
+			"",
+			"def ${1:main}($2):",
+			"    ${3:pass}",
+			"",
+			"if __name__ == \"__main__\":",
+			"    os.chdir(os.path.dirname(__file__))",
+			"    plac.call(${1:main})",
 			""
 		],
 		"description": "Boilerplate for a Python script"

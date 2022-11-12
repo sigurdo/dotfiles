@@ -34,5 +34,6 @@
     "git.suggestSmartCommit": false,
     "notebook.outputLineHeight": 1.2,
     "workbench.editor.enablePreview": false,
-    "window.zoomLevel": 1
+    "window.zoomLevel": 1,
+    "explorer.openEditors.visible": 0
 }
