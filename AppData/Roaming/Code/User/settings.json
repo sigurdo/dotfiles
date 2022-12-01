@@ -34,6 +34,10 @@
     "git.suggestSmartCommit": false,
     "notebook.outputLineHeight": 1.2,
     "workbench.editor.enablePreview": false,
-    "window.zoomLevel": 1,
-    "explorer.openEditors.visible": 0
+    "explorer.openEditors.visible": 0,
+    "workbench.editorAssociations": {
+        "*.svg": "svgPreviewer.customEditor"
+    },
+    "svg.preview.transparencyGrid": false,
+    "svg.preview.boundingBox": false
 }
