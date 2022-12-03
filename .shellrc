@@ -1,5 +1,9 @@
+ipaddr() {
+    ip addr show dev eth0 | grep -e "inet " | cut -d " " -f6 | cut -d "/" -f1
+}
+
 firefox_wsl() {
-    DOCUMENT_PATH=""
+    DOCUMENT_PATH="$1"
     if [ -f "$1" ]
     then
         DOCUMENT_PATH=$(wslpath -w $1)
