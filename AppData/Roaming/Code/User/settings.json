@@ -39,5 +39,6 @@
         "*.svg": "svgPreviewer.customEditor"
     },
     "svg.preview.transparencyGrid": false,
-    "svg.preview.boundingBox": false
+    "svg.preview.boundingBox": false,
+    "window.zoomLevel": 1
 }
