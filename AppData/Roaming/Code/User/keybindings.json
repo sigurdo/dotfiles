@@ -74,5 +74,13 @@
         "key": "ctrl+d",
         "command": "-editor.action.addSelectionToNextFindMatch",
         "when": "editorFocus"
+    },
+    {
+        "key": "ctrl+shift+w",
+        "command": "cSpell.addWordToWorkspaceDictionary"
+    },
+    {
+        "key": "ctrl+alt+w",
+        "command": "cSpell.addWordToUserDictionary"
     }
 ]

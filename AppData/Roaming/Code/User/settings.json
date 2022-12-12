@@ -40,5 +40,10 @@
     },
     "svg.preview.transparencyGrid": false,
     "svg.preview.boundingBox": false,
-    "window.zoomLevel": 1
+    "cSpell.language": "en,no,de",
+    // "cSpell.enabled": false,
+    "cSpell.enabledLanguageIds": [
+        "latex"
+    ],
+    "editor.wordSeparators": "`~!@#$%^&*()-=+[{]}\\|;:'\",.<>/?_",
 }
