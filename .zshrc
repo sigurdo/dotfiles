@@ -118,16 +118,7 @@ then
 fi
 
 greeting_ascii_art() {
-    source /etc/os-release
-    image=fish
-    if [[ $NAME = *Arch* ]]
-    then
-        image=arch
-    elif [[ $NAME = *Ubuntu* ]]
-    then
-        image=ubuntu
-    fi
-    ~/.fish_greeting_utils/target/release/main ~/.fish_greeting_utils $image
+    ~/.neofetch-only-ascii/neofetch
 }
 
 greeting_machine_description() {
@@ -168,7 +159,7 @@ greeting_time_of_day() {
 greeting() {
     if [ -f $(which center) ]
     then
-        greeting_ascii_art
+        printf $reset_color    && greeting_ascii_art | center
         printf $fg[white]      && greeting_machine_description | center
         printf $fg_bold[white] && greeting_date | center
         printf $fg_bold[blue]  && greeting_time_of_day | center
