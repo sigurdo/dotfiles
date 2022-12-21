@@ -159,6 +159,7 @@ greeting_time_of_day() {
 greeting() {
     if [ -f $(which center) ]
     then
+        printf "\n"
         printf $reset_color    && greeting_ascii_art | center
         printf $fg[white]      && greeting_machine_description | center
         printf $fg_bold[white] && greeting_date | center
