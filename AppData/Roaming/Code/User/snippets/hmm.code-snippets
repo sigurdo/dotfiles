@@ -73,5 +73,17 @@
 			"\\end{figure}",
 			""
 		]
+	},
+	"Shell script boilerplate": {
+		"scope": "shellscript",
+		"prefix": "boilerplate",
+		"body": [
+			"#!/bin/sh",
+			"set -e",
+			"cd \\$(dirname \\$0)/",
+			"",
+			"$0",
+			"",
+		]
 	}
 }

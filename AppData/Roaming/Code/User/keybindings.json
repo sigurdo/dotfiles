@@ -82,5 +82,9 @@
     {
         "key": "ctrl+alt+w",
         "command": "cSpell.addWordToUserDictionary"
+    },
+    {
+        "key": "ctrl+shift+alt+d",
+        "command": "editor.action.addSelectionToPreviousFindMatch"
     }
 ]
