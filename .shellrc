@@ -1,3 +1,10 @@
+if [ -f $HOME/.local.shellrc ]
+then
+    source $HOME/.local.shellrc
+fi
+
+export PATH=$HOME/.local/bin:$PATH
+
 ipaddr() {
     # https://stackoverflow.com/questions/8529181/which-terminal-command-to-get-just-ip-address-and-nothing-else
     # `| cut -f1` is to remove red color from grep

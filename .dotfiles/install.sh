@@ -1,5 +1,5 @@
 #!/bin/sh
-set -e
+set -ev
 cd ~
 
 # Clone submodules
@@ -32,3 +32,7 @@ cd .fish_greeting_utils
     cargo build --release
     sudo ln -s $(pwd)/target/release/center /usr/bin/center
 cd ..
+
+pip install ptpython
+pip install plac
+pip install tomlkit

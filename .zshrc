@@ -112,11 +112,6 @@ source $ZSH/oh-my-zsh.sh
 
 source $HOME/.shellrc
 
-if [ -f $HOME/.local.shellrc ]
-then
-    source $HOME/.local.shellrc
-fi
-
 greeting_ascii_art() {
     ~/.neofetch-only-ascii/neofetch
 }

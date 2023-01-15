@@ -10,8 +10,3 @@ alias ls='ls --color=auto'
 PS1='\w 💩 '
 
 source $HOME/.shellrc
-
-if [ -f $HOME/.local.shellrc ]
-then
-    source $HOME/.local.shellrc
-fi
