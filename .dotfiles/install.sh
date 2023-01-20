@@ -27,6 +27,9 @@ rustup toolchain install stable
 # Install toilet
 yay -S --answerclean None --answerdiff None toilet toilet-fonts
 
+# Install usbip
+sudo pacman -S usbip
+
 # Install fish_greeting_utils
 cd .fish_greeting_utils
     cargo build --release
