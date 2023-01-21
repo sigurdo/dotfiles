@@ -143,7 +143,7 @@ greeting_date() {
 }
 
 greeting_time_of_day() {
-    if [ -f "$(which toilet)" ]
+    if which toilet &> /dev/null
     then
         date +"%R" | toilet -f future
     else
@@ -152,7 +152,7 @@ greeting_time_of_day() {
 }
 
 greeting() {
-    if [ -f $(which center) ]
+    if which center &> /dev/null
     then
         printf "\n"
         printf $reset_color    && greeting_ascii_art | center

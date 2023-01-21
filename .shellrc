@@ -1,8 +1,4 @@
-if [ -f $HOME/.local.shellrc ]
-then
-    source $HOME/.local.shellrc
-fi
-
+# Configure PATH
 export PATH=$HOME/.local/bin:$PATH
 
 ipaddr() {
@@ -26,8 +22,14 @@ firefox_wsl() {
     fi
 }
 
-if [ ! -f "$(which firefox 2> /dev/null)" ]
+# Map WSL compatible firefox command if firefox is not installed
+if ! which firefox &> /dev/null
 then
-    # If firefox command is not found, map WSL compatible firefox command.
     alias firefox=firefox_wsl
+fi
+
+# Source local shellrc last so that it takes priority
+if [ -f $HOME/.local.shellrc ]
+then
+    source $HOME/.local.shellrc
 fi
