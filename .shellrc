@@ -28,6 +28,12 @@ then
     alias firefox=firefox_wsl
 fi
 
+# Alias c= to "code ." if vscode is installed
+if which code &> /dev/null
+then
+    alias c="code ."
+fi
+
 # Source local shellrc last so that it takes priority
 if [ -f $HOME/.local.shellrc ]
 then
