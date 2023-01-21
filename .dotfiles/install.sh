@@ -36,6 +36,7 @@ cd .fish_greeting_utils
     sudo ln -s $(pwd)/target/release/center /usr/bin/center
 cd ..
 
+pip install prompt-toolkit
 pip install ptpython
 pip install plac
 pip install tomlkit
