@@ -7,9 +7,19 @@ cd $(dirname $0)/
 
 # Command line arguments (in addition to all other docker run arguments):
 # -d --detach               Run container in background and print container ID
-# -e "ONEDRIVE_RESYNC=1"    Run in resync mode
 
-export ONEDRIVE_DATA_DIR=$HOME/onedrive/
+# Configurable environment variables:
+# ONEDRIVE_DATA_DIR         Path to (already existing) directory on host machine to sync files to. Default is $HOME/onedrive/
+# ONEDRIVE_RESYNC           When set to 1, the container will start with a resync. This must be done when specific config options or sync_list is changed. When set to 0 (as by default), the container starts normally.
+
+if [ "$ONEDRIVE_DATA_DIR" = "" ]
+then
+    export ONEDRIVE_DATA_DIR=$HOME/onedrive/
+fi
+if [ "$ONEDRIVE_RESYNC" = "" ]
+then
+    export ONEDRIVE_RESYNC=0
+fi
 export ONEDRIVE_UID=$(id -u)
 export ONEDRIVE_GID=$(id -g)
 
@@ -26,7 +36,7 @@ then
 fi
 
 # Start onedrive monitor
-docker run --name onedrive --rm -v onedrive_conf:/onedrive/conf -v $ONEDRIVE_DATA_DIR:/onedrive/data -e "ONEDRIVE_UID=${ONEDRIVE_UID}" -e "ONEDRIVE_GID=${ONEDRIVE_GID}" -e "ONEDRIVE_RESYNC=0" $@ driveone/onedrive:latest
+docker run --name onedrive --rm -v onedrive_conf:/onedrive/conf -v $ONEDRIVE_DATA_DIR:/onedrive/data -e "ONEDRIVE_UID=${ONEDRIVE_UID}" -e "ONEDRIVE_GID=${ONEDRIVE_GID}" -e "ONEDRIVE_RESYNC=$ONEDRIVE_RESYNC" $@ driveone/onedrive:latest
 
 # Other useful commands:
 

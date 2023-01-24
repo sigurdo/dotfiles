@@ -7,67 +7,86 @@ ipaddr() {
     ip -4 addr show eth0 | grep -oP '(?<=inet\s)\d+(\.\d+){3}' | cut -f1
 }
 
-firefox_wsl() {
+exe_with_file_argument_wsl() {
     # todo: support multiple files.
     # this will requires some sed-magic due to backslash treatment
     # https://unix.stackexchange.com/questions/70459/treatment-of-backslashes-across-shells
-    DOCUMENT_PATH="$1"
-    if [ -f "$1" ]
-    then
-        DOCUMENT_PATH=$(wslpath -w $1)
-    fi
-    FIREFOX_PATH="/mnt/c/Program Files/Mozilla Firefox/firefox.exe"
-    if [ -f "$FIREFOX_PATH" ]
-    then
-        "$FIREFOX_PATH" "$DOCUMENT_PATH"
-    else
-        echo "Couldn't find firefox executable at $FIREFOX_PATH"
-    fi
-}
+    EXE_PATH=$1
+    shift 1
+    DOCUMENT_PATH=$1
 
-paintdotnet_wsl() {
-    # todo: support multiple files.
-    # this will requires some sed-magic due to backslash treatment
-    # https://unix.stackexchange.com/questions/70459/treatment-of-backslashes-across-shells
-    DOCUMENT_PATH="$1"
-    if [ -f "$1" ]
+    if [ ! -f "$EXE_PATH" ]
     then
-        DOCUMENT_PATH=$(wslpath -w $1)
+        EXE_PATH=$(wslpath "$EXE_PATH")
+        if [ ! -f "$EXE_PATH" ]
+        then
+            echo "Couldn't find executable $EXE_PATH" >&2
+            exit 1
+        fi
     fi
-    PAINTDOTNET_PATH=$(wslpath "C:\Program Files\paint.net\paintdotnet.exe")
-    if [ -f "$PAINTDOTNET_PATH" ]
+    if [ -f "$DOCUMENT_PATH" ]
     then
-        "$PAINTDOTNET_PATH" "$DOCUMENT_PATH"
-    else
-        echo "Couldn't find paint.net executable at $PAINTDOTNET_PATH"
+        DOCUMENT_PATH=$(wslpath -w "$DOCUMENT_PATH")
     fi
+
+    "$EXE_PATH" "$DOCUMENT_PATH"
 }
 
 # Map WSL compatible firefox command if firefox is not installed
 if ! which firefox > /dev/null 2>&1
 then
-    alias firefox=firefox_wsl
+    alias firefox='exe_with_file_argument_wsl "/mnt/c/Program Files/Mozilla Firefox/firefox.exe"'
 fi
 
 # Map WSL compatible paintdotnet command if paintdotnet is not installed
 if ! which paintdotnet > /dev/null 2>&1
 then
-    alias paintdotnet=paintdotnet_wsl
+    alias paintdotnet='exe_with_file_argument_wsl "C:\Program Files\paint.net\paintdotnet.exe"'
 fi
 
 # Map WSL compatible paintdotnet command if eog is not installed
 if ! which eog > /dev/null 2>&1
 then
-    alias eog=paintdotnet_wsl
+    alias eog='paintdotnet'
 fi
 
-# Map WSL compatible firefox command if firefox is not installed
-if ! which firefox > /dev/null 2>&1
+# Map WSL compatible word command if word is not installed
+if ! which word > /dev/null 2>&1
 then
-    alias firefox=firefox_wsl
+    alias word='exe_with_file_argument_wsl "C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE"'
 fi
 
-# Alias c= to "code ." if vscode is installed
+# Map WSL compatible powerpoint command if powerpoint is not installed
+if ! which powerpoint > /dev/null 2>&1
+then
+    alias powerpoint='exe_with_file_argument_wsl "C:\Program Files\Microsoft Office\root\Office16\POWERPNT.EXE"'
+fi
+
+# Map WSL compatible excel command if excel is not installed
+if ! which excel > /dev/null 2>&1
+then
+    alias excel='exe_with_file_argument_wsl "C:\Program Files\Microsoft Office\root\Office16\EXCEL.EXE"'
+fi
+
+# Map WSL compatible adobe command if adobe is not installed
+if ! which adobe > /dev/null 2>&1
+then
+    alias adobe='exe_with_file_argument_wsl "C:\Program Files\Adobe\Acrobat DC\Acrobat\Acrobat.exe"'
+fi
+
+# Map WSL compatible gimp command if gimp is not installed
+if ! which gimp > /dev/null 2>&1
+then
+    alias gimp='exe_with_file_argument_wsl "C:\Program Files\GIMP 2\bin\gimp-2.10.exe"'
+fi
+
+# Map WSL compatible notepad command if notepad is not installed
+if ! which notepad > /dev/null 2>&1
+then
+    alias notepad='exe_with_file_argument_wsl "/mnt/c/Windows/notepad.exe"'
+fi
+
+# Alias c to "code ." if vscode is installed
 if which code > /dev/null 2>&1
 then
     alias c="code ."
@@ -77,11 +96,4 @@ fi
 if [ -f $HOME/.local.shellrc ]
 then
     source $HOME/.local.shellrc
-fi
-
-# If WSL instance, start onedrive client
-# On a non-WSL instance, this should be done more properly as a part of system startup or login
-if [ $WSL_DISTRO_NAME != "" ]
-then
-    $HOME/.dotfiles/onedrive_linux.sh -d > /dev/null 2>&1
 fi
