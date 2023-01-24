@@ -23,13 +23,13 @@ firefox_wsl() {
 }
 
 # Map WSL compatible firefox command if firefox is not installed
-if ! which firefox &> /dev/null
+if ! which firefox > /dev/null 2>&1
 then
     alias firefox=firefox_wsl
 fi
 
 # Alias c= to "code ." if vscode is installed
-if which code &> /dev/null
+if which code > /dev/null 2>&1
 then
     alias c="code ."
 fi
@@ -42,5 +42,5 @@ fi
 
 if [ $WSL_DISTRO_NAME != "" ]
 then
-    $HOME/.dotfiles/onedrive_linux.sh -d &> /dev/null
+    $HOME/.dotfiles/onedrive_linux.sh -d > /dev/null 2>&1
 fi
