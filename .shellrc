@@ -8,6 +8,9 @@ ipaddr() {
 }
 
 firefox_wsl() {
+    # todo: support multiple files.
+    # this will requires some sed-magic due to backslash treatment
+    # https://unix.stackexchange.com/questions/70459/treatment-of-backslashes-across-shells
     DOCUMENT_PATH="$1"
     if [ -f "$1" ]
     then
@@ -16,11 +19,47 @@ firefox_wsl() {
     FIREFOX_PATH="/mnt/c/Program Files/Mozilla Firefox/firefox.exe"
     if [ -f "$FIREFOX_PATH" ]
     then
-        "$FIREFOX_PATH" $DOCUMENT_PATH
+        "$FIREFOX_PATH" "$DOCUMENT_PATH"
     else
         echo "Couldn't find firefox executable at $FIREFOX_PATH"
     fi
 }
+
+paintdotnet_wsl() {
+    # todo: support multiple files.
+    # this will requires some sed-magic due to backslash treatment
+    # https://unix.stackexchange.com/questions/70459/treatment-of-backslashes-across-shells
+    DOCUMENT_PATH="$1"
+    if [ -f "$1" ]
+    then
+        DOCUMENT_PATH=$(wslpath -w $1)
+    fi
+    PAINTDOTNET_PATH=$(wslpath "C:\Program Files\paint.net\paintdotnet.exe")
+    if [ -f "$PAINTDOTNET_PATH" ]
+    then
+        "$PAINTDOTNET_PATH" "$DOCUMENT_PATH"
+    else
+        echo "Couldn't find paint.net executable at $PAINTDOTNET_PATH"
+    fi
+}
+
+# Map WSL compatible firefox command if firefox is not installed
+if ! which firefox > /dev/null 2>&1
+then
+    alias firefox=firefox_wsl
+fi
+
+# Map WSL compatible paintdotnet command if paintdotnet is not installed
+if ! which paintdotnet > /dev/null 2>&1
+then
+    alias paintdotnet=paintdotnet_wsl
+fi
+
+# Map WSL compatible paintdotnet command if eog is not installed
+if ! which eog > /dev/null 2>&1
+then
+    alias eog=paintdotnet_wsl
+fi
 
 # Map WSL compatible firefox command if firefox is not installed
 if ! which firefox > /dev/null 2>&1
