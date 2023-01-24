@@ -79,6 +79,8 @@ then
     source $HOME/.local.shellrc
 fi
 
+# If WSL instance, start onedrive client
+# On a non-WSL instance, this should be done more properly as a part of system startup or login
 if [ $WSL_DISTRO_NAME != "" ]
 then
     $HOME/.dotfiles/onedrive_linux.sh -d > /dev/null 2>&1
