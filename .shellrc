@@ -39,3 +39,8 @@ if [ -f $HOME/.local.shellrc ]
 then
     source $HOME/.local.shellrc
 fi
+
+if [ $WSL_DISTRO_NAME != "" ]
+then
+    $HOME/.dotfiles/onedrive_linux.sh -d &> /dev/null
+fi
