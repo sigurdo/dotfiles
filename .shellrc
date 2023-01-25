@@ -8,6 +8,8 @@ ipaddr() {
 }
 
 exe_with_file_argument_wsl() {
+    # Calls $EXE_PATH with $DOCUMENT_PATH as first argument.
+    # Both paths are automatically translated between Windows and WSL path when necessary.
     # todo: support multiple files.
     # this will requires some sed-magic due to backslash treatment
     # https://unix.stackexchange.com/questions/70459/treatment-of-backslashes-across-shells
@@ -32,62 +34,52 @@ exe_with_file_argument_wsl() {
     "$EXE_PATH" "$DOCUMENT_PATH"
 }
 
-# Map WSL compatible firefox command if firefox is not installed
-if ! which firefox > /dev/null 2>&1
-then
-    alias firefox='exe_with_file_argument_wsl "/mnt/c/Program Files/Mozilla Firefox/firefox.exe"'
-fi
+alias_if_not_exists() {
+    # Registers an alias if $ALIAS_NAME is not already an existing command
+    ALIAS_NAME=$1
+    shift 1
+    COMMAND=$1
 
-# Map WSL compatible paintdotnet command if paintdotnet is not installed
-if ! which paintdotnet > /dev/null 2>&1
-then
-    alias paintdotnet='exe_with_file_argument_wsl "C:\Program Files\paint.net\paintdotnet.exe"'
-fi
+    if ! command -v $ALIAS_NAME > /dev/null
+    then
+        alias $ALIAS_NAME="$COMMAND"
+    fi
+}
 
-# Map WSL compatible paintdotnet command if eog is not installed
-if ! which eog > /dev/null 2>&1
-then
-    alias eog='paintdotnet'
-fi
+register_wsl_alias_for_exe() {
+    # Registers a WSL compatible alias to a .exe path if $ALIAS_NAME is not already an existing command
+    ALIAS_NAME=$1
+    shift 1
+    EXE_PATH=$1
+    alias_if_not_exists $ALIAS_NAME "exe_with_file_argument_wsl \"$EXE_PATH\""
+}
 
-# Map WSL compatible word command if word is not installed
-if ! which word > /dev/null 2>&1
-then
-    alias word='exe_with_file_argument_wsl "C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE"'
-fi
+register_wsl_alias_for_exe firefox '/mnt/c/Program Files/Mozilla Firefox/firefox.exe'
+register_wsl_alias_for_exe chrome 'C:\Program Files\Google\Chrome\Application\chrome.exe'
+register_wsl_alias_for_exe edge 'C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe'
+register_wsl_alias_for_exe paintdotnet 'C:\Program Files\paint.net\paintdotnet.exe'
+register_wsl_alias_for_exe word 'C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE'
+register_wsl_alias_for_exe powerpoint 'C:\Program Files\Microsoft Office\root\Office16\POWERPNT.EXE'
+register_wsl_alias_for_exe excel 'C:\Program Files\Microsoft Office\root\Office16\EXCEL.EXE'
+register_wsl_alias_for_exe outlook 'C:\Program Files\Microsoft Office\root\Office16\OUTLOOK.EXE'
+register_wsl_alias_for_exe onedrive 'C:\Program Files\Microsoft OneDrive\OneDrive.exe'
+register_wsl_alias_for_exe adobe 'C:\Program Files\Adobe\Acrobat DC\Acrobat\Acrobat.exe'
+register_wsl_alias_for_exe gimp 'C:\Program Files\GIMP 2\bin\gimp-2.10.exe'
+register_wsl_alias_for_exe notepad '/mnt/c/Windows/notepad.exe'
+register_wsl_alias_for_exe ucterm 'C:\Users\sigur\ucboard\ucterm\ucterm\bin\ucterm.exe'
+register_wsl_alias_for_exe stlink 'C:\Program Files (x86)\STMicroelectronics\STM32 ST-LINK Utility\ST-LINK Utility\STM32 ST-LINK Utility.exe'
+register_wsl_alias_for_exe eclipse 'C:\Ac6\SystemWorkbench\eclipse.exe'
+register_wsl_alias_for_exe openshot-qt 'C:\Program Files\OpenShot Video Editor\openshot-qt.exe'
+register_wsl_alias_for_exe fraps 'C:\Fraps\fraps.exe'
+register_wsl_alias_for_exe teraterm 'C:\Program Files (x86)\teraterm\ttermpro.exe'
+register_wsl_alias_for_exe rgb-light-sense 'C:\Program Files (x86)\RGB Light Sense\RGB Light Sense.exe'
+register_wsl_alias_for_exe jlt 'C:\Program Files (x86)\JLT Edge Wireless\OemDrv.exe'
+register_wsl_alias_for_exe steam 'C:\Program Files (x86)\Steam\Steam.exe'
 
-# Map WSL compatible powerpoint command if powerpoint is not installed
-if ! which powerpoint > /dev/null 2>&1
-then
-    alias powerpoint='exe_with_file_argument_wsl "C:\Program Files\Microsoft Office\root\Office16\POWERPNT.EXE"'
-fi
-
-# Map WSL compatible excel command if excel is not installed
-if ! which excel > /dev/null 2>&1
-then
-    alias excel='exe_with_file_argument_wsl "C:\Program Files\Microsoft Office\root\Office16\EXCEL.EXE"'
-fi
-
-# Map WSL compatible adobe command if adobe is not installed
-if ! which adobe > /dev/null 2>&1
-then
-    alias adobe='exe_with_file_argument_wsl "C:\Program Files\Adobe\Acrobat DC\Acrobat\Acrobat.exe"'
-fi
-
-# Map WSL compatible gimp command if gimp is not installed
-if ! which gimp > /dev/null 2>&1
-then
-    alias gimp='exe_with_file_argument_wsl "C:\Program Files\GIMP 2\bin\gimp-2.10.exe"'
-fi
-
-# Map WSL compatible notepad command if notepad is not installed
-if ! which notepad > /dev/null 2>&1
-then
-    alias notepad='exe_with_file_argument_wsl "/mnt/c/Windows/notepad.exe"'
-fi
+alias_if_not_exists eog 'paintdotnet'
 
 # Alias c to "code ." if vscode is installed
-if which code > /dev/null 2>&1
+if command -v code > /dev/null
 then
     alias c="code ."
 fi
