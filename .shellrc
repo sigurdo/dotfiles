@@ -7,15 +7,39 @@ ipaddr() {
     ip -4 addr show eth0 | grep -oP '(?<=inet\s)\d+(\.\d+){3}' | cut -f1
 }
 
-exe_with_file_argument_wsl() {
-    # Calls $EXE_PATH with $DOCUMENT_PATH as first argument.
-    # Both paths are automatically translated between Windows and WSL path when necessary.
-    # todo: support multiple files.
-    # this will requires some sed-magic due to backslash treatment
-    # https://unix.stackexchange.com/questions/70459/treatment-of-backslashes-across-shells
+call_command_with_wsl_path_arguments_translated_to_windows_paths() {
+    # Calls command given by $1 with arguments $2 $3 $4 and so on.
+    # Arguments that are a valid WSL path to a file are translated to Windows paths.
+    # Example:
+    # call_command_with_wsl_path_arguments_translated_to_windows_paths firefox.exe ~/example.pdf google.com
+    # will open firefox with ~/example.pdf in one tab, and google.com in another.
+    COMMAND=$1
+    shift 1
+
+    i=0
+    for ARGUMENT in "$@"
+    do
+        if [ -f "$ARGUMENT" ]
+        then
+            ARGUMENT=$(wslpath -w "$ARGUMENT")
+        fi
+        if [ $i -eq 0 ]
+        then
+            set -- "$ARGUMENT"
+        else
+            set -- "$@" "$ARGUMENT"
+        fi
+        i=$((i+1))
+    done
+
+    "$COMMAND" "$@"
+}
+
+call_exe_with_file_argument_wsl() {
+    # Calls a .exe file given by $1 with arguments $2 $3 $4 and so on.
+    # All paths are automatically translated between Windows and WSL path when necessary.
     EXE_PATH=$1
     shift 1
-    DOCUMENT_PATH=$1
 
     if [ ! -f "$EXE_PATH" ]
     then
@@ -26,23 +50,18 @@ exe_with_file_argument_wsl() {
             exit 1
         fi
     fi
-    if [ -f "$DOCUMENT_PATH" ]
-    then
-        DOCUMENT_PATH=$(wslpath -w "$DOCUMENT_PATH")
-    fi
 
-    "$EXE_PATH" "$DOCUMENT_PATH"
+    call_command_with_wsl_path_arguments_translated_to_windows_paths "$EXE_PATH" "$@"
 }
 
 alias_if_not_exists() {
     # Registers an alias if $ALIAS_NAME is not already an existing command
     ALIAS_NAME=$1
     shift 1
-    COMMAND=$1
 
     if ! command -v $ALIAS_NAME > /dev/null
     then
-        alias $ALIAS_NAME="$COMMAND"
+        alias $ALIAS_NAME="$@"
     fi
 }
 
@@ -51,7 +70,7 @@ register_wsl_alias_for_exe() {
     ALIAS_NAME=$1
     shift 1
     EXE_PATH=$1
-    alias_if_not_exists $ALIAS_NAME "exe_with_file_argument_wsl \"$EXE_PATH\""
+    alias_if_not_exists $ALIAS_NAME "call_exe_with_file_argument_wsl \"$EXE_PATH\""
 }
 
 register_wsl_alias_for_exe firefox '/mnt/c/Program Files/Mozilla Firefox/firefox.exe'

@@ -172,4 +172,4 @@ greeting() {
     fi
 }
 
-greeting
+[[ $- == *i* ]] && greeting
