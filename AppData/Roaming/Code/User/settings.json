@@ -12,7 +12,11 @@
     "files.associations": {
         "*.v": "systemverilog",
         "*.gfv": "systemverilog",
-        "*.tda": "systemverilog"
+        "*.tda": "systemverilog",
+        "*.env": "shellscript",
+        ".local.shellrc": "shellscript",
+        ".shellrc": "shellscript",
+        "*.c": "c"
     },
     "[rust]": {
         "editor.defaultFormatter": "rust-lang.rust-analyzer"
@@ -45,5 +49,4 @@
     "cSpell.enabledLanguageIds": [
         "latex"
     ],
-    "editor.wordSeparators": "`~!@#$%^&*()-=+[{]}\\|;:'\",.<>/?_",
 }
