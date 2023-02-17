@@ -108,3 +108,5 @@ if [ -f $HOME/.local.shellrc ]
 then
     source $HOME/.local.shellrc
 fi
+
+alias_if_not_exists serial "$HOME/.dotfiles/pyserial_interactive_connection.py"
