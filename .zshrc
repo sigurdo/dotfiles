@@ -162,6 +162,8 @@ greeting() {
         printf $reset_color
     else
         echo ""
+        printf $reset_color    && greeting_ascii_art
+        echo ""
         printf $fg[white]      && greeting_machine_description
         echo ""
         printf $fg_bold[white] && greeting_date
