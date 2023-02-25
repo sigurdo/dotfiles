@@ -86,8 +86,6 @@ register_wsl_alias_for_exe adobe 'C:\Program Files\Adobe\Acrobat DC\Acrobat\Acro
 register_wsl_alias_for_exe gimp 'C:\Program Files\GIMP 2\bin\gimp-2.10.exe'
 register_wsl_alias_for_exe notepad '/mnt/c/Windows/notepad.exe'
 register_wsl_alias_for_exe ucterm 'C:\Users\sigur\ucboard\ucterm\ucterm\bin\ucterm.exe'
-register_wsl_alias_for_exe stlink 'C:\Program Files (x86)\STMicroelectronics\STM32 ST-LINK Utility\ST-LINK Utility\STM32 ST-LINK Utility.exe'
-register_wsl_alias_for_exe eclipse 'C:\Ac6\SystemWorkbench\eclipse.exe'
 register_wsl_alias_for_exe openshot-qt 'C:\Program Files\OpenShot Video Editor\openshot-qt.exe'
 register_wsl_alias_for_exe fraps 'C:\Fraps\fraps.exe'
 register_wsl_alias_for_exe teraterm 'C:\Program Files (x86)\teraterm\ttermpro.exe'
