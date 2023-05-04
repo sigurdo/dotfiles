@@ -74,14 +74,6 @@ register_wsl_alias_for_exe() {
     alias_if_not_exists $ALIAS_NAME "call_exe_with_file_argument_wsl \"$EXE_PATH\""
 }
 
-restart_wsl_usb_attach_loop() {
-    SCREEN_SESSION_NAME=$1
-    HARDWARE_ID=$2
-
-    screen -S $SCREEN_SESSION_NAME -X quit > /dev/null
-    screen -dmS $SCREEN_SESSION_NAME cmd.exe /c "usbipd wsl attach --hardware-id $HARDWARE_ID --auto-attach"
-}
-
 register_wsl_alias_for_exe firefox '/mnt/c/Program Files/Mozilla Firefox/firefox.exe'
 register_wsl_alias_for_exe chrome 'C:\Program Files\Google\Chrome\Application\chrome.exe'
 register_wsl_alias_for_exe edge 'C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe'
