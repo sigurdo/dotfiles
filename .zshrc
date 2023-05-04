@@ -110,8 +110,6 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-source $HOME/.shellrc
-
 greeting_ascii_art() {
     ~/.neofetch-only-ascii/neofetch
 }
@@ -174,4 +172,9 @@ greeting() {
     fi
 }
 
-[[ $- == *i* ]] && greeting
+source $HOME/.shellrc
+
+if [ $ZSH_DISABLE_GREETING != 1 ]
+then
+    [[ $- == *i* ]] && greeting
+fi
