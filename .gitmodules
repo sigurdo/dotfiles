@@ -7,3 +7,6 @@
 [submodule ".neofetch-only-ascii"]
 	path = .neofetch-only-ascii
 	url = git@github.com:sigurdo/neofetch-only-ascii.git
+[submodule ".dotfiles/wsl-sudo"]
+	path = .dotfiles/wsl-sudo
+	url = https://github.com/Chronial/wsl-sudo.git
