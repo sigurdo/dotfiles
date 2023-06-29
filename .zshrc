@@ -68,6 +68,15 @@ ZSH_THEME="bananastronauten"
 
 typeset -A ZSH_HIGHLIGHT_STYLES
 ZSH_HIGHLIGHT_STYLES[arg0]='fg=green,bold'
+ZSH_HIGHLIGHT_STYLES[suffix-alias]='fg=green,bold,underline'
+ZSH_HIGHLIGHT_STYLES[precommand]='fg=green,bold,underline'
+ZSH_HIGHLIGHT_STYLES[autodirectory]='fg=green,bold,underline'
+ZSH_AUTOSUGGEST_STRATEGY=(
+    match_prev_cmd
+    history
+    completion
+)
+ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
 
 # Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/
