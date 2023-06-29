@@ -72,7 +72,7 @@ ZSH_HIGHLIGHT_STYLES[suffix-alias]='fg=green,bold,underline'
 ZSH_HIGHLIGHT_STYLES[precommand]='fg=green,bold,underline'
 ZSH_HIGHLIGHT_STYLES[autodirectory]='fg=green,bold,underline'
 ZSH_AUTOSUGGEST_STRATEGY=(
-    match_prev_cmd
+    # match_prev_cmd
     history
     completion
 )
