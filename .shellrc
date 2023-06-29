@@ -103,6 +103,9 @@ then
 fi
 
 alias_if_not_exists serial "$HOME/.dotfiles/pyserial_interactive_connection.py"
+alias_if_not_exists restart_wsl_usb_attach_loop "$HOME/.dotfiles/restart_wsl_usb_attach_loop.sh"
+alias_if_not_exists wsl-sudo "$HOME/.dotfiles/wsl-sudo/wsl-sudo.py"
+alias_if_not_exists wudo wsl-sudo
 
 # Source local shellrc last so that it takes priority
 if [ -f $HOME/.local.shellrc ]
