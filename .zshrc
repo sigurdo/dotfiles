@@ -84,7 +84,7 @@ ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-    fzf
+    skim-zsh
     git
     shrink-path
     zsh-autosuggestions
@@ -183,7 +183,7 @@ greeting() {
 
 source $HOME/.shellrc
 
-if [ $ZSH_DISABLE_GREETING != 1 ]
+if [ "$ZSH_DISABLE_GREETING" != "1" ]
 then
     [[ $- == *i* ]] && greeting
 fi

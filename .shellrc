@@ -1,6 +1,7 @@
 # Configure PATH
 export PATH=$HOME/.dotfiles/bin:$PATH
 export PATH=$HOME/.local/bin:$PATH
+export PATH=$HOME/.cargo/bin:$PATH
 
 ipaddr() {
     # https://stackoverflow.com/questions/8529181/which-terminal-command-to-get-just-ip-address-and-nothing-else
