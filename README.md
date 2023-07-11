@@ -112,10 +112,16 @@ paru -S toilet
 sudo pacman -S usbip
 ```
 
-## Install amp
+### Install amp
 
 ```
 cargo install --git https://github.com/jmacdonald/amp.git
+```
+
+### Install bottom (top alternative)
+
+```
+sudo pacman -S bottom
 ```
 
 ### Install fish_greeting_utils
