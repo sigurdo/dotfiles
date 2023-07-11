@@ -10,3 +10,6 @@
 [submodule ".dotfiles/wsl-sudo"]
 	path = .dotfiles/wsl-sudo
 	url = https://github.com/Chronial/wsl-sudo.git
+[submodule ".config/amp/themes"]
+	path = .config/amp/themes
+	url = https://github.com/filmgirl/TextMate-Themes.git
