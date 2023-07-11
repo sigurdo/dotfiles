@@ -118,10 +118,10 @@ sudo pacman -S usbip
 cargo install --git https://github.com/jmacdonald/amp.git
 ```
 
-### Install bottom (top alternative)
+### Install nice rust replacements for basic command line tools
 
 ```
-sudo pacman -S bottom
+sudo pacman -S bottom bandwhich exa procs dust
 ```
 
 ### Install fish_greeting_utils
