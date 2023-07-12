@@ -13,3 +13,6 @@
 [submodule ".config/amp/themes"]
 	path = .config/amp/themes
 	url = https://github.com/filmgirl/TextMate-Themes.git
+[submodule "AppData/Roaming/alacritty/alacritty-theme"]
+	path = AppData/Roaming/alacritty/alacritty-theme
+	url = https://github.com/alacritty/alacritty-theme.git

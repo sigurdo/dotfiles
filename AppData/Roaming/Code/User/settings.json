@@ -59,7 +59,8 @@
     "cSpell.userWords": [
         "clearify",
         "datasheet",
-        "microcontroller"
+        "microcontroller",
+        "perfectioning"
     ],
     "workbench.iconTheme": "Monokai Classic Icons",
     "files.exclude": {
@@ -88,7 +89,6 @@
     },
     "python.formatting.provider": "black",
     "gitlens.currentLine.enabled": false,
-    "workbench.activityBar.visible": false,
     // "cortex-debug.stlinkPath": "/home/sigurd/st/stm32cubeide_1.11.2/plugins/com.st.stm32cube.ide.mcu.externaltools.stlink-gdb-server.linux64_2.0.400.202209281104/tools/bin/ST-LINK_gdbserver",
     // "cortex-debug.armToolchainPath": "",
     // "cortex-debug.gdbPath": "/home/sigurd/downloads/gcc-arm-none-eabi-10.3-2021.10/bin/arm-none-eabi-gdb",
