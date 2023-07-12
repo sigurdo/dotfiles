@@ -121,7 +121,11 @@ cargo install --git https://github.com/jmacdonald/amp.git
 ### Install nice rust replacements for basic command line tools
 
 ```
-sudo pacman -S bottom bandwhich exa procs dust
+sudo pacman -S bottom bandwhich exa procs dust zellij
+```
+
+```
+paru -S rm-improved rnr
 ```
 
 ### Install fish_greeting_utils
