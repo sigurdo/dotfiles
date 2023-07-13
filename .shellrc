@@ -100,7 +100,14 @@ alias_if_not_exists eog 'paintdotnet'
 # Alias c to "code ." if vscode is installed
 if command -v code > /dev/null
 then
-    alias c="code ."
+    c() {
+        if [ "$#" -eq 0 ]
+        then
+            code .
+        else
+            code $@
+        fi
+    }
 fi
 
 alias_if_not_exists serial "$HOME/.dotfiles/pyserial_interactive_connection.py"
