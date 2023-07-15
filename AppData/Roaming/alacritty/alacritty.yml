@@ -27,6 +27,9 @@ colors:
   #   white:   '0xFFFAFA'
   # bright:
   #   yellow:  '0xF7F17F'
+  selection:
+    text: CellForeground
+    background: '#868686'
 # # import:
 # #   - "C:\\Users\\sigur\\AppData\\Roaming\\alacritty\\dracula\\dracula.yml"
 
