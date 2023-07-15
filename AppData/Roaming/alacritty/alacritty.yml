@@ -15,12 +15,12 @@ colors:
 #   draw_bold_text_with_bright_colors: true
 #   primary:
 #     # background: '#0C0C0C'
-  # normal:
+  normal:
   #   # Set normal colors equal to bright colors (except for yellow)
   #   black:   '0x696969'
   #   red:     '0xFF2400'
   #   green:   '0x03C03C'
-  #   # yellow:  '0xFDFF00'
+      yellow:  '0xE0B500'
   #   blue:    '0x007FFF'
   #   magenta: '0xFF1493'
   #   cyan:    '0x00CCCC'
