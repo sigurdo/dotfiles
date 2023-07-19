@@ -18,7 +18,7 @@
         ".shellrc": "shellscript",
         "*.c": "c",
         "*.s": "arm",
-        "*.su": "plaintext"
+        "*.su": "plaintext",
     },
     "[rust]": {
         "editor.defaultFormatter": "rust-lang.rust-analyzer"
@@ -40,7 +40,6 @@
     "git.suggestSmartCommit": false,
     "notebook.outputLineHeight": 1.2,
     "workbench.editor.enablePreview": false,
-    "explorer.openEditors.visible": 0,
     "workbench.editorAssociations": {
         "*.svg": "svgPreviewer.customEditor"
     },
@@ -94,6 +93,10 @@
     "window.title": "${rootName}${separator}${dirty}${activeEditorShort}${separator}${profileName}",
     "latex-workshop.latex.rootFile.indicator": "\\begin{document}",
     "latex-workshop.view.pdf.internal.synctex.keybinding": "double-click",
+    "workbench.list.openMode": "doubleClick",
+    "workbench.activityBar.visible": false,
+    "editor.acceptSuggestionOnEnter": "off",
+    "editor.wordBasedSuggestions": false,
     // "cortex-debug.stlinkPath": "/home/sigurd/st/stm32cubeide_1.11.2/plugins/com.st.stm32cube.ide.mcu.externaltools.stlink-gdb-server.linux64_2.0.400.202209281104/tools/bin/ST-LINK_gdbserver",
     // "cortex-debug.armToolchainPath": "",
     // "cortex-debug.gdbPath": "/home/sigurd/downloads/gcc-arm-none-eabi-10.3-2021.10/bin/arm-none-eabi-gdb",

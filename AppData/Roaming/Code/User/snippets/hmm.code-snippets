@@ -106,6 +106,22 @@
 			""
 		]
 	},
+	"Subscript": {
+		"scope": "latex",
+		"prefix": ["sub"],
+		"body": [
+			"$1_{$2}"
+		],
+		"description": "Subscript wrapped in curly brackets"
+	},
+	"Curly brackets": {
+		"scope": "latex",
+		"prefix": ["curlybrackets"],
+		"body": [
+			"{$1}"
+		],
+		"description": "More ergonomic way to type small curly brackets"
+	},
 	"Shell script boilerplate": {
 		"scope": "shellscript",
 		"prefix": "boilerplate",
