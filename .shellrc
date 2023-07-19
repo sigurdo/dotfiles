@@ -115,6 +115,7 @@ alias_if_not_exists restart_wsl_usb_attach_loop "$HOME/.dotfiles/restart_wsl_usb
 alias_if_not_exists wsl-sudo "$HOME/.dotfiles/wsl-sudo/wsl-sudo.py"
 alias_if_not_exists wudo wsl-sudo
 alias_if_not_exists e exa
+alias_if_not_exists f firefox
 
 # Source local shellrc last so that it takes priority
 if [ -f $HOME/.local.shellrc ]
