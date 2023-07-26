@@ -181,6 +181,13 @@ greeting() {
     fi
 }
 
+set_title_custom() {
+    title "$(shrink_path -f)"
+}
+
+DISABLE_AUTO_TITLE=true
+add-zsh-hook precmd set_title_custom
+
 source $HOME/.shellrc
 
 if [ "$ZSH_DISABLE_GREETING" != "1" ]
