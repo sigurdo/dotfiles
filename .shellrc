@@ -72,7 +72,7 @@ register_wsl_alias_for_exe() {
     ALIAS_NAME=$1
     shift 1
     EXE_PATH=$1
-    alias_if_not_exists $ALIAS_NAME "call_exe_with_file_argument_wsl \"$EXE_PATH\""
+    alias $ALIAS_NAME="call_exe_with_file_argument_wsl \"$EXE_PATH\""
 }
 
 register_wsl_alias_for_exe firefox '/mnt/c/Program Files/Mozilla Firefox/firefox.exe'
@@ -83,7 +83,7 @@ register_wsl_alias_for_exe adobe 'C:\Program Files\Adobe\Acrobat DC\Acrobat\Acro
 register_wsl_alias_for_exe gimp 'C:\Program Files\GIMP 2\bin\gimp-2.10.exe'
 register_wsl_alias_for_exe notepad '/mnt/c/Windows/notepad.exe'
 
-alias_if_not_exists eog 'paintdotnet'
+alias eog='paintdotnet'
 
 # Alias c to "code ." if vscode is installed
 if command -v code > /dev/null
@@ -98,12 +98,12 @@ then
     }
 fi
 
-alias_if_not_exists serial "$HOME/.dotfiles/pyserial_interactive_connection.py"
-alias_if_not_exists restart_wsl_usb_attach_loop "$HOME/.dotfiles/restart_wsl_usb_attach_loop.sh"
-alias_if_not_exists wsl-sudo "$HOME/.dotfiles/wsl-sudo/wsl-sudo.py"
-alias_if_not_exists wudo wsl-sudo
-alias_if_not_exists e exa
-alias_if_not_exists f firefox
+alias serial="$HOME/.dotfiles/pyserial_interactive_connection.py"
+alias restart_wsl_usb_attach_loop="$HOME/.dotfiles/restart_wsl_usb_attach_loop.sh"
+alias wsl=sudo "$HOME/.dotfiles/wsl-sudo/wsl-sudo.py"
+alias wudo=wsl-sudo
+alias e=exa
+alias f=firefox
 
 # Source local shellrc last so that it takes priority
 if [ -f $HOME/.local.shellrc ]
