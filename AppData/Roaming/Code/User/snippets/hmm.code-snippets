@@ -56,6 +56,43 @@
 		],
 		"description": "Boilerplate for a Python script"
 	},
+	"Argparse-based Python script boilerplate": {
+		"scope": "python",
+		"prefix": "argparse-boilerplate",
+		"body": [
+			"#!/usr/bin/python3",
+			"",
+			"import argparse",
+			"import inspect",
+			"import os",
+			"import subprocess",
+			"import time",
+			"",
+			"",
+			"def r(*path):",
+			"    \"\"\"",
+			"    Takes a relative path from the directory of this python file and returns the absolute path.",
+			"    \"\"\"",
+			"    return os.path.join(os.path.dirname(os.path.abspath(__file__)), *path)",
+			"",
+			"",
+			"def run_in_dir(directory, callable):",
+			"    cwd = os.getcwd()",
+			"    os.chdir(directory)",
+			"    result = callable()",
+			"    os.chdir(cwd)",
+			"    return result",
+			"",
+			"",
+			"if __name__ == \"__main__\":",
+			"    argument_parser = argparse.ArgumentParser()",
+			"    # argument_parser.add_argument(\"\", type=, help=\"\")",
+			"    args = argument_parser.parse_args()",
+			"    $1",
+			""
+		],
+		"description": "Boilerplate for a Python script"
+	},
 	"Plac-based Python script boilerplate": {
 		"scope": "python",
 		"prefix": "plac-boilerplate",
@@ -99,29 +136,29 @@
 		"body": [
 			"\\begin{figure}",
 			"    \\centering",
-			"    \\include${1:graphics}[width=${2:1.0}\\textwidth]$3",
+			"    \\include${1:graphics}[width=${2:1.0}\\textwidth]{figures/$3}",
 			"    \\caption{$5.}",
 			"    \\label{fig:$4}",
 			"\\end{figure}",
 			""
 		]
 	},
-	"Subscript": {
-		"scope": "latex",
-		"prefix": ["sub"],
-		"body": [
-			"$1_{$2}"
-		],
-		"description": "Subscript wrapped in curly brackets"
-	},
-	"Curly brackets": {
-		"scope": "latex",
-		"prefix": ["curlybrackets"],
-		"body": [
-			"{$1}"
-		],
-		"description": "More ergonomic way to type small curly brackets"
-	},
+	// "Subscript": {
+	// 	"scope": "latex",
+	// 	"prefix": ["sub"],
+	// 	"body": [
+	// 		"$1_{$2}"
+	// 	],
+	// 	"description": "Subscript wrapped in curly brackets"
+	// },
+	// "Curly brackets": {
+	// 	"scope": "latex",
+	// 	"prefix": ["curlybrackets"],
+	// 	"body": [
+	// 		"{$1}"
+	// 	],
+	// 	"description": "More ergonomic way to type small curly brackets"
+	// },
 	"Shell script boilerplate": {
 		"scope": "shellscript",
 		"prefix": "boilerplate",
@@ -132,6 +169,20 @@
 			"",
 			"$0",
 			"",
+		]
+	},
+	"C boilerplate": {
+		"scope": "c",
+		"prefix": "boilerplate",
+		"body": [
+			"#include <stdio.h>",
+			"",
+			"int main(void) {",
+			"    printf(\"Hello World!\\n\");",
+			"    $1",
+			"    return 0;",
+			"}",
+			""
 		]
 	}
 }
