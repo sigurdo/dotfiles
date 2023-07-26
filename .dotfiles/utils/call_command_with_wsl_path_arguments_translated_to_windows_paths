@@ -1,0 +1,27 @@
+#!/bin/sh
+
+# Calls command given by $1 with arguments $2 $3 $4 and so on.
+# Arguments that are a valid WSL path to a file are translated to Windows paths.
+# Example:
+# call_command_with_wsl_path_arguments_translated_to_windows_paths firefox.exe ~/example.pdf google.com
+# will open firefox with ~/example.pdf in one tab, and google.com in another.
+COMMAND=$1
+shift 1
+
+i=0
+for ARGUMENT in "$@"
+do
+    if [ -f "$ARGUMENT" ]
+    then
+        ARGUMENT=$(wslpath -w "$ARGUMENT")
+    fi
+    if [ $i -eq 0 ]
+    then
+        set -- "$ARGUMENT"
+    else
+        set -- "$@" "$ARGUMENT"
+    fi
+    i=$((i+1))
+done
+
+"$COMMAND" "$@"

@@ -1,60 +1,8 @@
 # Configure PATH
 export PATH=$HOME/.dotfiles/bin:$PATH
+export PATH=$HOME/.dotfiles/utils:$PATH
 export PATH=$HOME/.local/bin:$PATH
 export PATH=$HOME/.cargo/bin:$PATH
-
-ipaddr() {
-    # https://stackoverflow.com/questions/8529181/which-terminal-command-to-get-just-ip-address-and-nothing-else
-    # `| cut -f1` is to remove red color from grep
-    ip -4 addr show eth0 | grep -oP '(?<=inet\s)\d+(\.\d+){3}' | cut -f1
-}
-
-call_command_with_wsl_path_arguments_translated_to_windows_paths() {
-    # Calls command given by $1 with arguments $2 $3 $4 and so on.
-    # Arguments that are a valid WSL path to a file are translated to Windows paths.
-    # Example:
-    # call_command_with_wsl_path_arguments_translated_to_windows_paths firefox.exe ~/example.pdf google.com
-    # will open firefox with ~/example.pdf in one tab, and google.com in another.
-    COMMAND=$1
-    shift 1
-
-    i=0
-    for ARGUMENT in "$@"
-    do
-        if [ -f "$ARGUMENT" ]
-        then
-            ARGUMENT=$(wslpath -w "$ARGUMENT")
-        fi
-        if [ $i -eq 0 ]
-        then
-            set -- "$ARGUMENT"
-        else
-            set -- "$@" "$ARGUMENT"
-        fi
-        i=$((i+1))
-    done
-
-    "$COMMAND" "$@"
-}
-
-call_exe_with_file_argument_wsl() {
-    # Calls a .exe file given by $1 with arguments $2 $3 $4 and so on.
-    # All paths are automatically translated between Windows and WSL path when necessary.
-    EXE_PATH=$1
-    shift 1
-
-    if [ ! -f "$EXE_PATH" ]
-    then
-        EXE_PATH=$(wslpath "$EXE_PATH")
-        if [ ! -f "$EXE_PATH" ]
-        then
-            echo "Couldn't find executable $EXE_PATH" >&2
-            exit 1
-        fi
-    fi
-
-    call_command_with_wsl_path_arguments_translated_to_windows_paths "$EXE_PATH" "$@"
-}
 
 alias_if_not_exists() {
     # Registers an alias if $ALIAS_NAME is not already an existing command

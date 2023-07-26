@@ -1,0 +1,18 @@
+#!/bin/sh
+
+# Calls a .exe file given by $1 with arguments $2 $3 $4 and so on.
+# All paths are automatically translated between Windows and WSL path when necessary.
+EXE_PATH=$1
+shift 1
+
+if [ ! -f "$EXE_PATH" ]
+then
+    EXE_PATH=$(wslpath "$EXE_PATH")
+    if [ ! -f "$EXE_PATH" ]
+    then
+        echo "Couldn't find executable $EXE_PATH" >&2
+        exit 1
+    fi
+fi
+
+call_command_with_wsl_path_arguments_translated_to_windows_paths "$EXE_PATH" "$@"
