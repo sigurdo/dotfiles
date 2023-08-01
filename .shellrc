@@ -48,7 +48,7 @@ fi
 
 alias serial="$HOME/.dotfiles/pyserial_interactive_connection.py"
 alias restart_wsl_usb_attach_loop="$HOME/.dotfiles/restart_wsl_usb_attach_loop.sh"
-alias wsl=sudo "$HOME/.dotfiles/wsl-sudo/wsl-sudo.py"
+alias wsl-sudo="$HOME/.dotfiles/wsl-sudo/wsl-sudo.py"
 alias wudo=wsl-sudo
 alias e=exa
 alias f=firefox
