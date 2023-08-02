@@ -23,3 +23,9 @@ or you can have a general rule `/lib/udev/rules.d/99-usb-device.rules` granting 
 ```
 SUBSYSTEM=="usb", MODE="666"
 ```
+
+To get read access to the serial port associated with a USB device, you also have to add a rule `/lib/udev/rules.d/99-usb-serial-port.rules`:
+
+```
+KERNEL=="ttyUSB[0-9]*", MODE="666"
+```
