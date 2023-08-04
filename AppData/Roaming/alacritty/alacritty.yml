@@ -21,6 +21,7 @@ colors:
 #   draw_bold_text_with_bright_colors: true
   primary:
     background: '#272822' # Same background color as monokai vscode
+    # background: '#191919' # Same background color as windows file explorer
   normal:
   #   # Set normal colors equal to bright colors (except for yellow)
   #   black:   '0x696969'
