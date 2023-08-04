@@ -1,26 +1,32 @@
 window:
   startup_mode: Maximized
+  # opacity: 0
+  # decorations: none
 
 key_bindings:
   - { key: F11, action: ToggleFullscreen }
 
 cursor:
-  style: Beam
+  style:
+    shape: Beam
+    # blinking: Always
 
 # blood_moon
 import:
-  - "C:\\Users\\sigur\\AppData\\Roaming\\alacritty\\alacritty-theme\\themes\\campbell.yaml"
+  # - "C:\\Users\\sigur\\AppData\\Roaming\\alacritty\\alacritty-theme\\themes\\campbell.yaml"
+  - "C:\\Users\\sigur\\AppData\\Roaming\\alacritty\\alacritty-theme\\themes\\monokai_charcoal.yaml"
+  # - "C:\\Users\\sigur\\AppData\\Roaming\\alacritty\\dracula\\dracula.yml"
 draw_bold_text_with_bright_colors: true
 colors:
 #   draw_bold_text_with_bright_colors: true
-#   primary:
-#     # background: '#0C0C0C'
+  primary:
+    background: '#272822' # Same background color as monokai vscode
   normal:
   #   # Set normal colors equal to bright colors (except for yellow)
   #   black:   '0x696969'
   #   red:     '0xFF2400'
   #   green:   '0x03C03C'
-      yellow:  '0xE0B500'
+      # yellow:  '0xE0B500'
   #   blue:    '0x007FFF'
   #   magenta: '0xFF1493'
   #   cyan:    '0x00CCCC'
@@ -30,8 +36,6 @@ colors:
   selection:
     text: CellForeground
     background: '#868686'
-# # import:
-# #   - "C:\\Users\\sigur\\AppData\\Roaming\\alacritty\\dracula\\dracula.yml"
 
 font:
   size: 13.0

@@ -76,7 +76,6 @@
         "**/.trunk/*plugins/": true
     },
     "editor.defaultFormatter": "trunk.io",
-    "editor.formatOnSave": true,
     "[cpp]": {
         "editor.defaultFormatter": "xaver.clang-format"
     },
@@ -94,10 +93,15 @@
     "latex-workshop.latex.rootFile.indicator": "\\begin{document}",
     "latex-workshop.view.pdf.internal.synctex.keybinding": "double-click",
     "workbench.list.openMode": "doubleClick",
-    "workbench.activityBar.visible": false,
     "editor.acceptSuggestionOnEnter": "off",
     "editor.wordBasedSuggestions": false,
     "latex-workshop.texcount.autorun": "onSave",
+    "[latex]": {
+        "editor.defaultFormatter": "James-Yu.latex-workshop"
+    },
+    "editor.formatOnSave": true,
+    "workbench.activityBar.visible": false,
+    "workbench.tree.expandMode": "doubleClick",
     // "cortex-debug.stlinkPath": "/home/sigurd/st/stm32cubeide_1.11.2/plugins/com.st.stm32cube.ide.mcu.externaltools.stlink-gdb-server.linux64_2.0.400.202209281104/tools/bin/ST-LINK_gdbserver",
     // "cortex-debug.armToolchainPath": "",
     // "cortex-debug.gdbPath": "/home/sigurd/downloads/gcc-arm-none-eabi-10.3-2021.10/bin/arm-none-eabi-gdb",
