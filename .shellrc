@@ -4,6 +4,8 @@ export PATH=$HOME/.dotfiles/utils:$PATH
 export PATH=$HOME/.local/bin:$PATH
 export PATH=$HOME/.cargo/bin:$PATH
 
+export EDITOR=nvim
+
 alias_if_not_exists() {
     # Registers an alias if $ALIAS_NAME is not already an existing command
     ALIAS_NAME=$1
