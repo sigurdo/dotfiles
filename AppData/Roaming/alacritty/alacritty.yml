@@ -34,6 +34,10 @@ colors:
   #   white:   '0xFFFAFA'
   # bright:
   #   yellow:  '0xF7F17F'
+  normal:
+    magenta: "#f332fa"
+  bright:
+    magenta: "#f332fa"
   selection:
     text: CellForeground
     background: '#868686'

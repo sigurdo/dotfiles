@@ -8,7 +8,6 @@
     },
     "security.workspace.trust.untrustedFiles": "open",
     "editor.bracketPairColorization.enabled": true,
-    "workbench.colorTheme": "Monokai",
     "files.associations": {
         "*.v": "systemverilog",
         "*.gfv": "systemverilog",
@@ -30,7 +29,6 @@
     "rust-analyzer.inlayHints.parameterHints.enable": false,
     "latex-workshop.latex.autoBuild.run": "onSave",
     "latex-workshop.docker.image.latex": "blang/latex",
-    "latex-workshop.synctex.afterBuild.enabled": true,
     "diffEditor.ignoreTrimWhitespace": false,
     "markdown-pdf.margin.top": "1in",
     "markdown-pdf.margin.right": "1in",
@@ -61,7 +59,6 @@
         "microcontroller",
         "perfectioning"
     ],
-    "workbench.iconTheme": "Monokai Classic Icons",
     "files.exclude": {
         "**/.trunk/*out/": true,
         "**/.trunk/*actions/": true,
@@ -100,8 +97,8 @@
         "editor.defaultFormatter": "James-Yu.latex-workshop"
     },
     "editor.formatOnSave": true,
-    "workbench.activityBar.visible": false,
     "workbench.tree.expandMode": "doubleClick",
+    "workbench.colorTheme": "Monokai",
     // "cortex-debug.stlinkPath": "/home/sigurd/st/stm32cubeide_1.11.2/plugins/com.st.stm32cube.ide.mcu.externaltools.stlink-gdb-server.linux64_2.0.400.202209281104/tools/bin/ST-LINK_gdbserver",
     // "cortex-debug.armToolchainPath": "",
     // "cortex-debug.gdbPath": "/home/sigurd/downloads/gcc-arm-none-eabi-10.3-2021.10/bin/arm-none-eabi-gdb",
