@@ -72,17 +72,13 @@
         "**/.trunk/*logs/": true,
         "**/.trunk/*plugins/": true
     },
-    "editor.defaultFormatter": "trunk.io",
+    "editor.defaultFormatter": "ms-python.black-formatter",
     "[cpp]": {
         "editor.defaultFormatter": "xaver.clang-format"
     },
     "[c]": {
         "editor.defaultFormatter": "xaver.clang-format"
     },
-    "[python]": {
-        "editor.defaultFormatter": "ms-python.black-formatter"
-    },
-    "python.formatting.provider": "black",
     "gitlens.currentLine.enabled": false,
     "window.newWindowDimensions": "maximized",
     "workbench.startupEditor": "none",
@@ -99,6 +95,16 @@
     "editor.formatOnSave": true,
     "workbench.tree.expandMode": "doubleClick",
     "workbench.colorTheme": "Monokai",
+    "workbench.activityBar.visible": false,
+    // Enable quick suggestions in BibTeX
+    "[bibtex]": {
+        "editor.quickSuggestions": {
+            "comments": true,
+        },
+        "editor.defaultFormatter": "James-Yu.latex-workshop"
+    },
+    "latex-workshop.bibtex-format.tab": "4 spaces",
+    "latex-workshop.bibtex-format.trailingComma": true,
     // "cortex-debug.stlinkPath": "/home/sigurd/st/stm32cubeide_1.11.2/plugins/com.st.stm32cube.ide.mcu.externaltools.stlink-gdb-server.linux64_2.0.400.202209281104/tools/bin/ST-LINK_gdbserver",
     // "cortex-debug.armToolchainPath": "",
     // "cortex-debug.gdbPath": "/home/sigurd/downloads/gcc-arm-none-eabi-10.3-2021.10/bin/arm-none-eabi-gdb",

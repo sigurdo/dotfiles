@@ -43,4 +43,5 @@ colors:
     background: '#868686'
 
 font:
-  size: 13.0
+  size: 12
+
