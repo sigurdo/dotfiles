@@ -112,16 +112,16 @@ paru -S toilet
 sudo pacman -S usbip
 ```
 
-### Install amp
+### Install neovim
 
 ```
-cargo install --git https://github.com/jmacdonald/amp.git
+sudo pacman -S neovim
 ```
 
 ### Install nice rust replacements for basic command line tools
 
 ```
-sudo pacman -S bottom bandwhich exa procs dust zellij
+sudo pacman -S bottom bandwhich exa procs dust zellij hexyl tealdeer
 ```
 
 ```
@@ -140,5 +140,5 @@ cd ..
 ### Install useful python packages
 
 ```
-pip install prompt-toolkit ptpython plac tomlkit --break-system-packages
+pip install prompt-toolkit ptpython plac tomlkit black --break-system-packages
 ```
