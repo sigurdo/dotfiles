@@ -16,6 +16,7 @@
         ".local.shellrc": "shellscript",
         ".shellrc": "shellscript",
         "*.c": "c",
+        "*.h": "c",
         "*.s": "arm",
         "*.su": "plaintext",
     },
@@ -95,7 +96,6 @@
     "editor.formatOnSave": true,
     "workbench.tree.expandMode": "doubleClick",
     "workbench.colorTheme": "Monokai",
-    "workbench.activityBar.visible": false,
     // Enable quick suggestions in BibTeX
     "[bibtex]": {
         "editor.quickSuggestions": {
@@ -109,4 +109,7 @@
     // "cortex-debug.armToolchainPath": "",
     // "cortex-debug.gdbPath": "/home/sigurd/downloads/gcc-arm-none-eabi-10.3-2021.10/bin/arm-none-eabi-gdb",
     // "cortex-debug.gdbPath": "/home/sigurd/st/stm32cubeide_1.11.2/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.linux64_1.0.100.202210260954/tools/bin/arm-none-eabi-gdb",
+    "cortex-debug.variableUseNaturalFormat": true,
+    "C_Cpp.autoAddFileAssociations": false,
+    "workbench.activityBar.visible": false,
 }
