@@ -27,14 +27,14 @@ action = "ToggleFullscreen"
 key = "F11"
 
 [[keyboard.bindings]]
-action = "Paste"
 key = "V"
 mods = "Control"
+action = "Paste"
 
 [[keyboard.bindings]]
-action = "CopyDynamic"
 key = "C"
 mods = "Control"
+action = "CopyDynamic"
 
 [window]
 startup_mode = "Maximized"
