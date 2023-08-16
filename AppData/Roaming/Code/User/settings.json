@@ -84,6 +84,8 @@
     "window.newWindowDimensions": "maximized",
     "workbench.startupEditor": "none",
     "window.title": "${rootName}${separator}${dirty}${activeEditorShort}${separator}${profileName}",
+    "window.titleSeparator": " – ",
+    "terminal.integrated.tabs.separator": " – ",
     "latex-workshop.latex.rootFile.indicator": "\\begin{document}",
     "latex-workshop.view.pdf.internal.synctex.keybinding": "double-click",
     "workbench.list.openMode": "doubleClick",
