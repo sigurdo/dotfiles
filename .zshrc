@@ -188,6 +188,12 @@ set_title_custom() {
 DISABLE_AUTO_TITLE=true
 add-zsh-hook precmd set_title_custom
 
+fix_cursor() {
+   echo -ne '\e[0 q'
+}
+
+add-zsh-hook precmd fix_cursor
+
 source $HOME/.shellrc
 
 if [ "$ZSH_DISABLE_GREETING" != "1" ]
