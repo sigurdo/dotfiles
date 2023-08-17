@@ -5,8 +5,6 @@ window:
 
 key_bindings:
   - { key: F11, action: ToggleFullscreen }
-  - { key: V,        mods: Control, action: Paste            } # Optional
-  - { key: C,        mods: Control, action: CopyDynamic      }
 
 cursor:
   style:
