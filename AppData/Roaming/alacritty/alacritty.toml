@@ -28,3 +28,4 @@ key = "F11"
 
 [window]
 startup_mode = "Maximized"
+decorations = "none"
