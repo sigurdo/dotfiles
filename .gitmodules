@@ -1,12 +1,12 @@
 [submodule ".fish_greeting_utils"]
 	path = .fish_greeting_utils
-	url = git@github.com:sigurdo/fish_greeting_utils.git
+	url = ../fish_greeting_utils.git
 [submodule ".ohmyzsh"]
 	path = .ohmyzsh
-	url = git@github.com:sigurdo/ohmyzsh.git
+	url = ../ohmyzsh.git
 [submodule ".neofetch-only-ascii"]
 	path = .neofetch-only-ascii
-	url = git@github.com:sigurdo/neofetch-only-ascii.git
+	url = ../neofetch-only-ascii.git
 [submodule ".dotfiles/wsl-sudo"]
 	path = .dotfiles/wsl-sudo
 	url = https://github.com/Chronial/wsl-sudo.git
