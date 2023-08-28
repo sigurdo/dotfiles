@@ -54,6 +54,7 @@ alias wsl-sudo="$HOME/.dotfiles/wsl-sudo/wsl-sudo.py"
 alias wudo=wsl-sudo
 alias e=exa
 alias f=firefox
+alias n=nvim
 alias browsh="docker run -it browsh/browsh"
 
 # Source local shellrc last so that it takes priority
