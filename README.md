@@ -128,6 +128,13 @@ sudo pacman -S bottom bandwhich exa procs dust zellij hexyl tealdeer
 paru -S rm-improved rnr
 ```
 
+### Install zoxide
+
+```
+sudo pacman -S zoxide
+zoxide init zsh > $HOME/.zoxide.zshrc
+```
+
 ### Install fish_greeting_utils
 
 ```

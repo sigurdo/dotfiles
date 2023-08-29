@@ -194,6 +194,11 @@ fix_cursor() {
 
 add-zsh-hook precmd fix_cursor
 
+if [ -f $HOME/.zoxide.zshrc ]
+then
+    source $HOME/.zoxide.zshrc
+fi
+
 source $HOME/.shellrc
 
 if [ "$ZSH_DISABLE_GREETING" != "1" ]
