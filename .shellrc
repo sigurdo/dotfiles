@@ -32,6 +32,7 @@ register_wsl_alias_for_exe paintdotnet 'C:\Program Files\paint.net\paintdotnet.e
 register_wsl_alias_for_exe adobe 'C:\Program Files\Adobe\Acrobat DC\Acrobat\Acrobat.exe'
 register_wsl_alias_for_exe gimp 'C:\Program Files\GIMP 2\bin\gimp-2.10.exe'
 register_wsl_alias_for_exe notepad '/mnt/c/Windows/notepad.exe'
+register_wsl_alias_for_exe explorer '/mnt/c/Windows/explorer.exe'
 
 alias eog='paintdotnet'
 
@@ -55,6 +56,7 @@ alias wudo=wsl-sudo
 alias e=exa
 alias f=firefox
 alias n=nvim
+alias ra=ranger
 alias browsh="docker run -it browsh/browsh"
 
 # Source local shellrc last so that it takes priority

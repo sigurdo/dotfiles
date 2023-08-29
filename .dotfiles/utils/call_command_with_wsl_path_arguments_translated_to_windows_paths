@@ -11,7 +11,7 @@ shift 1
 i=0
 for ARGUMENT in "$@"
 do
-    if [ -f "$ARGUMENT" ]
+    if [ -a "$ARGUMENT" ]
     then
         ARGUMENT=$(wslpath -w "$ARGUMENT")
     fi

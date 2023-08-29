@@ -112,10 +112,10 @@ paru -S toilet
 sudo pacman -S usbip
 ```
 
-### Install neovim
+### Install neovim and ranger
 
 ```
-sudo pacman -S neovim
+sudo pacman -S neovim ranger
 ```
 
 ### Install nice rust replacements for basic command line tools
