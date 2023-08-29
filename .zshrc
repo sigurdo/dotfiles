@@ -71,6 +71,8 @@ ZSH_HIGHLIGHT_STYLES[arg0]='fg=green,bold'
 ZSH_HIGHLIGHT_STYLES[suffix-alias]='fg=green,bold,underline'
 ZSH_HIGHLIGHT_STYLES[precommand]='fg=green,bold,underline'
 ZSH_HIGHLIGHT_STYLES[autodirectory]='fg=green,bold,underline'
+ZSH_HIGHLIGHT_STYLES[single-quoted-argument]='fg=11'
+ZSH_HIGHLIGHT_STYLES[double-quoted-argument]='fg=11'
 ZSH_AUTOSUGGEST_STRATEGY=(
     # match_prev_cmd
     history
