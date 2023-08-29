@@ -56,7 +56,8 @@ alias wudo=wsl-sudo
 alias e=exa
 alias f=firefox
 alias n=nvim
-alias r='ranger --choosedir=/tmp/newdir && cd "$(cat /tmp/newdir)"'
+alias ra=ranger
+alias racd='ranger --choosedir=/tmp/newdir && cd "$(cat /tmp/newdir)"'
 alias browsh="docker run -it browsh/browsh"
 
 # Source local shellrc last so that it takes priority
