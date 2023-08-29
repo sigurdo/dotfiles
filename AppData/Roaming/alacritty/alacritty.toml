@@ -1,7 +1,7 @@
 import = ['C:\Users\sigur\AppData\Roaming\alacritty\monokai_charcoal.toml']
 
 [colors]
-draw_bold_text_with_bright_colors = true
+draw_bold_text_with_bright_colors = false
 
 [colors.bright]
 magenta = "#f332fa"
