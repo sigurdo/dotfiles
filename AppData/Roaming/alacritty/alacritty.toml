@@ -20,10 +20,10 @@ text = "CellForeground"
 shape = "Beam"
 
 [font]
-size = 11
+size = 12
 
 [font.normal]
-family = "Fira Code"
+family = "CodeNewRoman Nerd Font Mono"
 
 [[keyboard.bindings]]
 action = "ToggleFullscreen"
