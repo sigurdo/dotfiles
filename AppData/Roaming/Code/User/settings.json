@@ -116,4 +116,6 @@
     "workbench.activityBar.visible": false,
     "editor.fontFamily": "'Fira Code', Consolas, 'Courier New', monospace",
     "editor.fontSize": 13,
+    "editor.fontLigatures": true,
+    "editor.fontWeight": "400",
 }
