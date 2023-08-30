@@ -114,4 +114,6 @@
     "cortex-debug.variableUseNaturalFormat": true,
     "C_Cpp.autoAddFileAssociations": false,
     "workbench.activityBar.visible": false,
+    "editor.fontFamily": "'Fira Code', Consolas, 'Courier New', monospace",
+    "editor.fontSize": 13,
 }
