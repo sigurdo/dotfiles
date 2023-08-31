@@ -112,10 +112,10 @@ paru -S toilet
 sudo pacman -S usbip
 ```
 
-### Install neovim and ranger
+### Install neovim
 
 ```
-sudo pacman -S neovim ranger
+sudo pacman -S neovim
 ```
 
 ### Install nice rust replacements for basic command line tools
@@ -133,6 +133,16 @@ paru -S rm-improved rnr
 ```
 sudo pacman -S zoxide
 zoxide init zsh > $HOME/.zoxide.zshrc
+```
+
+### Install more fun stuff
+
+```
+sudo pacman -S ranger xplr
+```
+
+```
+paru -S ascii-image-converter
 ```
 
 ### Install fish_greeting_utils
