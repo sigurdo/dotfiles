@@ -93,7 +93,8 @@
     "editor.wordBasedSuggestions": false,
     "latex-workshop.texcount.autorun": "onSave",
     "[latex]": {
-        "editor.defaultFormatter": "James-Yu.latex-workshop"
+        "editor.defaultFormatter": "James-Yu.latex-workshop",
+        "editor.wordSeparators": "`~!@#$%^&*()-=+[{]}\\|;:'\",.<>/?_"
     },
     "editor.formatOnSave": true,
     "workbench.tree.expandMode": "doubleClick",
