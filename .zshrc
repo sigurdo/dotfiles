@@ -187,6 +187,7 @@ set_title_custom() {
     title "$(shrink_path -f)"
 }
 
+
 DISABLE_AUTO_TITLE=true
 add-zsh-hook precmd set_title_custom
 
@@ -195,6 +196,21 @@ fix_cursor() {
 }
 
 add-zsh-hook precmd fix_cursor
+
+move_cursor_to_bottom_left () {
+    printf "\e[$LINES;H"
+}
+
+add-zsh-hook precmd move_cursor_to_bottom_left
+
+print_horizontal_line() {
+    $HOME/.fish_greeting_utils/target/release/horizontal_line --theme rainbow
+}
+
+if [ -f $HOME/.fish_greeting_utils/target/release/horizontal_line ]
+then
+    add-zsh-hook precmd print_horizontal_line
+fi
 
 if [ -f $HOME/.zoxide.zshrc ]
 then
