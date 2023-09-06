@@ -212,6 +212,8 @@ then
     add-zsh-hook precmd print_horizontal_line
 fi
 
+PROMPT="$(echo '$(move_cursor_to_bottom_left)')$PROMPT"
+
 if [ -f $HOME/.zoxide.zshrc ]
 then
     source $HOME/.zoxide.zshrc
