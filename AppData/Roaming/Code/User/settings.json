@@ -115,8 +115,10 @@
     "cortex-debug.variableUseNaturalFormat": true,
     "C_Cpp.autoAddFileAssociations": false,
     "workbench.activityBar.visible": false,
-    "editor.fontFamily": "'CodeNewRoman Nerd Font Mono', Consolas, 'Courier New', monospace",
-    "editor.fontSize": 14,
+    "editor.fontFamily": "'Fira Code', 'CodeNewRoman Nerd Font Mono', Consolas, 'Courier New', monospace",
     "editor.fontLigatures": true,
     "editor.fontWeight": "400",
+    "scm.defaultViewMode": "tree",
+    "search.defaultViewMode": "tree",
+    "editor.fontSize": 13,
 }

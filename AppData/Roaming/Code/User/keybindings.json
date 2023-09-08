@@ -193,5 +193,17 @@
     {
         "key": "ctrl+n",
         "command": "explorer.newFile"
+    },
+    {
+        "key": "ctrl+shift+s",
+        "command": "workbench.action.files.saveFiles"
+    },
+    {
+        "key": "ctrl+shift+s",
+        "command": "-workbench.action.files.saveAs"
+    },
+    {
+        "key": "ctrl+shift+n",
+        "command": "explorer.newFolder"
     }
 ]
