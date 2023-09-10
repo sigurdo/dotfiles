@@ -198,15 +198,26 @@ reset_cursor_style() {
 }
 
 move_cursor_to_bottom_left () {
-    printf "\e[$LINES;H"
+    printf "\e[$(expr $LINES - 1);H"
+}
+
+print_newline() {
+    echo ""
+}
+
+update_prompt_line_seed() {
+    PROMPT_LINE_SEED=$(date +"%N")
 }
 
 PROMPT_LINE_THEME="rainbow"
 PROMPT_LINE_CHARACTER="—"
+PROMPT_LINE_SEED=$(date +"%N")
 PROMPT_LINE=""
 if [ -f $HOME/.fish_greeting_utils/target/release/horizontal_line ]
 then
-    PROMPT_LINE='$($HOME/.fish_greeting_utils/target/release/horizontal_line --zsh-prompt-colors --width $COLUMNS --theme $PROMPT_LINE_THEME --character $PROMPT_LINE_CHARACTER)'
+    add-zsh-hook precmd print_newline # Make sure output from last command is visible above prompt
+    add-zsh-hook precmd update_prompt_line_seed
+    PROMPT_LINE='$($HOME/.fish_greeting_utils/target/release/horizontal_line --zsh-prompt-colors --width $COLUMNS --theme $PROMPT_LINE_THEME --character $PROMPT_LINE_CHARACTER --seed $PROMPT_LINE_SEED)'
 fi
 
 serr() {
