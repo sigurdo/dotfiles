@@ -160,15 +160,19 @@ greeting_time_of_day() {
     fi
 }
 
+greeting_x_centered() {
+    printf "\n"
+    printf $reset_color    && greeting_ascii_art | center --x-only
+    printf $fg[white]      && greeting_machine_description | center --x-only
+    printf $fg_bold[white] && greeting_date | center --x-only
+    printf $fg_bold[blue]  && greeting_time_of_day | center --x-only
+    printf $reset_color
+}
+
 greeting() {
     if which center > /dev/null 2>&1
     then
-        printf "\n"
-        printf $reset_color    && greeting_ascii_art | center
-        printf $fg[white]      && greeting_machine_description | center
-        printf $fg_bold[white] && greeting_date | center
-        printf $fg_bold[blue]  && greeting_time_of_day | center
-        printf $reset_color
+        greeting_x_centered | center
     else
         echo ""
         printf $reset_color    && greeting_ascii_art
@@ -183,36 +187,42 @@ greeting() {
     fi
 }
 
+DISABLE_AUTO_TITLE=true
+
 set_title_custom() {
     title "$(shrink_path -f)"
 }
 
-
-DISABLE_AUTO_TITLE=true
-add-zsh-hook precmd set_title_custom
-
-fix_cursor() {
+reset_cursor_style() {
    echo -ne '\e[0 q'
 }
-
-add-zsh-hook precmd fix_cursor
 
 move_cursor_to_bottom_left () {
     printf "\e[$LINES;H"
 }
 
-add-zsh-hook precmd move_cursor_to_bottom_left
-
-print_horizontal_line() {
-    $HOME/.fish_greeting_utils/target/release/horizontal_line --theme rainbow
-}
-
+PROMPT_LINE_THEME="rainbow"
+PROMPT_LINE_CHARACTER="—"
+PROMPT_LINE=""
 if [ -f $HOME/.fish_greeting_utils/target/release/horizontal_line ]
 then
-    add-zsh-hook precmd print_horizontal_line
+    PROMPT_LINE='$($HOME/.fish_greeting_utils/target/release/horizontal_line --zsh-prompt-colors --width $COLUMNS --theme $PROMPT_LINE_THEME --character $PROMPT_LINE_CHARACTER)'
 fi
 
-PROMPT="$(echo '$(move_cursor_to_bottom_left)')$PROMPT"
+serr() {
+    PROMPT_LINE_THEME="white"
+    clear
+}
+
+kult() {
+    PROMPT_LINE_THEME="rainbow"
+}
+
+taktlaus() {
+    PROMPT_LINE_THEME="taktlaus"
+}
+
+PROMPT='%{$(move_cursor_to_bottom_left)%}''%{$(reset_cursor_style)%}''%{$(set_title_custom)%}'"$PROMPT_LINE$PROMPT"
 
 if [ -f $HOME/.zoxide.zshrc ]
 then
