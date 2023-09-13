@@ -120,6 +120,14 @@ move_cursor_to_bottom_left () {
     printf "\e[$(expr $LINES - 1);H"
 }
 
+hide_cursor() {
+    printf "\e[?25l"
+}
+
+show_cursor() {
+    printf "\e[?25h"
+}
+
 print_newline() {
     echo ""
 }
@@ -152,7 +160,7 @@ taktlaus() {
     PROMPT_LINE_THEME="taktlaus"
 }
 
-PROMPT='%{$(move_cursor_to_bottom_left)%}%{$(reset_cursor_style)%}'"$PROMPT_LINE$PROMPT"
+PROMPT="%{$(move_cursor_to_bottom_left)%}%{$(reset_cursor_style)%}%{$(show_cursor)%}$PROMPT_LINE$PROMPT"
 
 if [ -f $HOME/.zoxide.zshrc ]
 then
