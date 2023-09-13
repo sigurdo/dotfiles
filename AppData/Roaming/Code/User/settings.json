@@ -19,6 +19,7 @@
         "*.h": "c",
         "*.s": "arm",
         "*.su": "plaintext",
+        ".zpreztorc": "shellscript"
     },
     "[rust]": {
         "editor.defaultFormatter": "rust-lang.rust-analyzer"
