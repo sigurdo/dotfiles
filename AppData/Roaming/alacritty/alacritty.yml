@@ -1,7 +1,7 @@
 window:
   startup_mode: Maximized
   # opacity: 0
-  decorations: none
+  # decorations: none
 
 key_bindings:
   - { key: F11, action: ToggleFullscreen }
@@ -16,7 +16,7 @@ import:
   # - "C:\\Users\\sigur\\AppData\\Roaming\\alacritty\\alacritty-theme\\themes\\campbell.yaml"
   - "C:\\Users\\sigur\\AppData\\Roaming\\alacritty\\alacritty-theme\\themes\\monokai_charcoal.yaml"
   # - "C:\\Users\\sigur\\AppData\\Roaming\\alacritty\\dracula\\dracula.yml"
-draw_bold_text_with_bright_colors: true
+# draw_bold_text_with_bright_colors: true
 colors:
 #   draw_bold_text_with_bright_colors: true
   primary:
@@ -43,6 +43,6 @@ colors:
     background: '#868686'
 
 font:
-  size: 11
+  size: 11.5
   normal:
     family: "Fira Code"

@@ -115,11 +115,17 @@
     // "cortex-debug.gdbPath": "/home/sigurd/st/stm32cubeide_1.11.2/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.linux64_1.0.100.202210260954/tools/bin/arm-none-eabi-gdb",
     "cortex-debug.variableUseNaturalFormat": true,
     "C_Cpp.autoAddFileAssociations": false,
-    "workbench.activityBar.visible": false,
     "editor.fontFamily": "'Fira Code', 'CodeNewRoman Nerd Font Mono', Consolas, 'Courier New', monospace",
     "editor.fontLigatures": true,
+    "[plaintext]": {
+        // "editor.unicodeHighlight.ambiguousCharacters": false,
+        // "editor.unicodeHighlight.invisibleCharacters": false,
+        "editor.fontLigatures": false
+    },
     "editor.fontWeight": "400",
     "scm.defaultViewMode": "tree",
     "search.defaultViewMode": "tree",
     "editor.fontSize": 13,
+    "rust-analyzer.lens.implementations.enable": false,
+    "workbench.activityBar.visible": false,
 }

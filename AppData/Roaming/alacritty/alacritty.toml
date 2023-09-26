@@ -26,6 +26,7 @@ size = 11.5
 # family = "CodeNewRoman Nerd Font Mono"
 family = "Fira Code"
 # family = "Consolas"
+# family = "MesloLGM NF"
 
 [[keyboard.bindings]]
 action = "ToggleFullscreen"
