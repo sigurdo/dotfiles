@@ -160,7 +160,7 @@ taktlaus() {
     PROMPT_LINE_THEME="taktlaus"
 }
 
-PROMPT="%{$(move_cursor_to_bottom_left)%}%{$(reset_cursor_style)%}%{$(show_cursor)%}$PROMPT_LINE$PROMPT"
+PROMPT='%{$(move_cursor_to_bottom_left)%}'"%{$(reset_cursor_style)%}%{$(show_cursor)%}$PROMPT_LINE$PROMPT"
 
 if [ -f $HOME/.zoxide.zshrc ]
 then

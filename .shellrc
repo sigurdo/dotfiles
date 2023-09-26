@@ -42,7 +42,7 @@ then
     c() {
         if [ "$#" -eq 0 ]
         then
-            code .
+            code . &
         else
             code $@
         fi
