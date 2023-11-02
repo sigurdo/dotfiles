@@ -11,6 +11,9 @@ magenta = "#f332fa"
 
 [colors.primary]
 background = "#272822"
+# background = "#553322"
+# background = "#ffffff"
+# foreground = "#000000"
 
 [colors.selection]
 background = "#868686"
@@ -35,3 +38,4 @@ key = "F11"
 [window]
 startup_mode = "Maximized"
 decorations = "none"
+# opacity = 0.6

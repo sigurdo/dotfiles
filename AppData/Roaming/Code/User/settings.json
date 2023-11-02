@@ -122,10 +122,16 @@
         // "editor.unicodeHighlight.invisibleCharacters": false,
         "editor.fontLigatures": false
     },
+    "[vhdl]": {
+        "editor.fontLigatures": false
+    },
     "editor.fontWeight": "400",
     "scm.defaultViewMode": "tree",
     "search.defaultViewMode": "tree",
     "editor.fontSize": 13,
     "rust-analyzer.lens.implementations.enable": false,
     "workbench.activityBar.visible": false,
+    "rust-analyzer.lens.run.enable": false,
+    "rust-analyzer.lens.debug.enable": false,
+    "explorer.sortOrder": "mixed",
 }
