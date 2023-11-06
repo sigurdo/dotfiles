@@ -83,7 +83,14 @@ sgr_rgb() {
 }
 
 greeting_x_centered() {
-    sgr_reset  && greeting_ascii_art | center --x-only
+    if [ "$(date +'%M')" = "00" ]
+    then
+        cat $HOME/.dotfiles/mann-med-skjegg.txt | center --x-only
+        echo ""
+        echo "På tide å oppdatere? sudo pacman -Syu" | center --x-only
+    else
+        sgr_reset && greeting_ascii_art | center --x-only
+    fi
     sgr_256 15 && greeting_machine_description | center --x-only
     sgr_bold   && sgr_256 15 && greeting_date | center --x-only
     sgr_bold   && sgr_256 4  && greeting_time_of_day | center --x-only
@@ -96,7 +103,14 @@ greeting() {
         greeting_x_centered | center
     else
         echo ""
-        sgr_reset              && greeting_ascii_art
+        if [ "$(date +'%M')" = "00" ]
+        then
+            cat $HOME/.dotfiles/mann-med-skjegg.txt
+            echo ""
+            echo "På tide å oppdatere? sudo pacman -Syu"
+        else
+            sgr_reset && greeting_ascii_art
+        fi
         echo ""
         sgr_256 15             && greeting_machine_description
         echo ""
