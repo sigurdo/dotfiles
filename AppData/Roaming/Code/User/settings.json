@@ -7,7 +7,6 @@
         "odroid": "linux"
     },
     "security.workspace.trust.untrustedFiles": "open",
-    "editor.bracketPairColorization.enabled": true,
     "files.associations": {
         "*.v": "systemverilog",
         "*.gfv": "systemverilog",
@@ -120,7 +119,12 @@
     "[plaintext]": {
         // "editor.unicodeHighlight.ambiguousCharacters": false,
         // "editor.unicodeHighlight.invisibleCharacters": false,
-        "editor.fontLigatures": false
+        "editor.fontLigatures": false,
+        "editor.bracketPairColorization.enabled": false
+    },
+    "[markdown]": {
+        "editor.fontLigatures": false,
+        "editor.bracketPairColorization.enabled": false
     },
     "[vhdl]": {
         "editor.fontLigatures": false
@@ -130,8 +134,8 @@
     "search.defaultViewMode": "tree",
     "editor.fontSize": 13,
     "rust-analyzer.lens.implementations.enable": false,
-    "workbench.activityBar.visible": false,
     "rust-analyzer.lens.run.enable": false,
     "rust-analyzer.lens.debug.enable": false,
     "explorer.sortOrder": "mixed",
+    "workbench.activityBar.location": "hidden",
 }
