@@ -62,6 +62,7 @@ alias aic='ascii-image-converter -Cc'
 alias browsh="docker run -it browsh/browsh"
 
 alias gst='git status'
+alias gui='gitui'
 
 # Source local shellrc last so that it takes priority
 if [ -f $HOME/.local.shellrc ]
