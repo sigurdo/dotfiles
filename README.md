@@ -121,7 +121,7 @@ sudo pacman -S neovim
 ### Install nice rust replacements for basic command line tools
 
 ```
-sudo pacman -S bottom bandwhich exa procs dust zellij hexyl tealdeer
+sudo pacman -S bottom bandwhich exa procs dust zellij hexyl tealdeer igrep gitui
 ```
 
 ```
