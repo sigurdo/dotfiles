@@ -137,5 +137,8 @@
     "rust-analyzer.lens.run.enable": false,
     "rust-analyzer.lens.debug.enable": false,
     "explorer.sortOrder": "mixed",
-    "workbench.activityBar.location": "hidden",
+    "editor.lineNumbers": "relative",
+    "workbench.colorCustomizations": {
+        // "editor.background": "#272822", // Vscode's default
+    },
 }
