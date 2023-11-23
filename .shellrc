@@ -56,6 +56,7 @@ alias wudo=wsl-sudo
 alias e=exa
 alias f=firefox
 alias n=nvim
+alias l=lvim
 alias ra=ranger
 alias racd='ranger --choosedir=/tmp/newdir && cd "$(cat /tmp/newdir)"'
 alias aic='ascii-image-converter -Cc'

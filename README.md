@@ -159,3 +159,8 @@ cd ..
 ```
 pip install prompt-toolkit ptpython plac tomlkit black --break-system-packages
 ```
+
+### Install lunarvim
+
+Official instructinons available at [lunarvim.org](https://www.lunarvim.org/docs/installation).
+
