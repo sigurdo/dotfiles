@@ -139,6 +139,10 @@
     "explorer.sortOrder": "mixed",
     "editor.lineNumbers": "relative",
     "workbench.colorCustomizations": {
-        // "editor.background": "#272822", // Vscode's default
+        "[Monokai]": {
+            // "editor.background": "#272822", // Vscode's default
+            "editor.background": "#181915",
+            "statusBar.background": "#31332b"
+        },
     },
 }
