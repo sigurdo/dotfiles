@@ -27,6 +27,7 @@ lvim.plugins = {
 lvim.colorscheme = "monokai"
 
 lvim.builtin.which_key.mappings["e"] = { "<cmd>NvimTreeFocus<CR>", "Explorer" }
+lvim.builtin.which_key.mappings["v"] = { "<C-v>", "Visual block mode" }
 lvim.builtin.nvimtree.setup.actions.open_file.quit_on_open = true
 
 vim.opt.relativenumber = true
