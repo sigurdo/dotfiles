@@ -16,9 +16,6 @@
 [submodule "AppData/Roaming/alacritty/alacritty-theme"]
 	path = AppData/Roaming/alacritty/alacritty-theme
 	url = https://github.com/alacritty/alacritty-theme.git
-[submodule ".config/nvim/pack/sigurd/start/monokai.nvim"]
-	path = .config/nvim/pack/sigurd/start/monokai.nvim
-	url = https://github.com/tanvirtin/monokai.nvim.git
 [submodule ".zprezto"]
 	path = .zprezto
 	url = https://github.com/sigurdo/prezto.git
