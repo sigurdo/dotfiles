@@ -6,19 +6,20 @@
 -- lvim.colorscheme = "monokai"
 
 lvim.plugins = {
-  { url = "https://github.com/sigurdo/monokai.nvim.git",
-  -- { url = "https://github.com/normful/monokai.nvim.git",
-  -- -- { "tanvirtin/monokai.nvim",
-  -- --   config = function()
-  -- --     local monokai = require("monokai")
-  -- --     local palette = monokai.classic
-  -- --     monokai.setup {
-  -- --       palette = {
-  -- --         base2 = '#272822',
-  --         base3 = '#393a31',
-  --       },
-  --     }
-  --   end
+  {
+    url = "https://github.com/sigurdo/monokai.nvim.git",
+    -- { url = "https://github.com/normful/monokai.nvim.git",
+    -- -- { "tanvirtin/monokai.nvim",
+    -- --   config = function()
+    -- --     local monokai = require("monokai")
+    -- --     local palette = monokai.classic
+    -- --     monokai.setup {
+    -- --       palette = {
+    -- --         base2 = '#272822',
+    --         base3 = '#393a31',
+    --       },
+    --     }
+    --   end
   },
 }
 
@@ -35,3 +36,15 @@ vim.opt.linebreak = true
 vim.opt.wrap = true
 vim.opt.titlestring = "%t — LunarVim"
 
+-- Setup Ruff LSP for formatting and diagnostics as described at
+-- https://github.com/LunarVim/LunarVim/discussions/3877
+local null_ls = require("null-ls")
+null_ls.setup({
+  sources = {
+    null_ls.builtins.formatting.ruff,
+    null_ls.builtins.diagnostics.ruff,
+  }
+})
+
+-- Automatically format on save
+vim.cmd [[autocmd BufWritePre <buffer> lua vim.lsp.buf.format()]]
