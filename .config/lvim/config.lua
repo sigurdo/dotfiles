@@ -33,4 +33,5 @@ lvim.builtin.nvimtree.setup.actions.open_file.quit_on_open = true
 vim.opt.relativenumber = true
 vim.opt.linebreak = true
 vim.opt.wrap = true
+vim.opt.titlestring = "%t — LunarVim"
 
