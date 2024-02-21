@@ -23,6 +23,23 @@ fi
 
 # Customize to your needs...
 
+# Keybindings
+
+# Vim-like movement
+bindkey -r '^[h'
+bindkey -r '^[k'
+bindkey '^[k' up-line-or-history
+bindkey '^[j' down-line-or-history
+bindkey '^[l' forward-char
+bindkey '^[h' backward-char
+bindkey '^[e' emacs-forward-word
+bindkey '^[w' vi-forward-word
+
+# Override __skimcmd used in the `skim-zsh` plugin.
+__skimcmd() {
+    which-command s
+}
+
 greeting_ascii_art() {
     ~/.neofetch-only-ascii/neofetch
 }
