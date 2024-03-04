@@ -38,6 +38,8 @@ vim.opt.titlestring = "%t — LunarVim"
 
 lvim.keys.normal_mode[";"] = { ",", desc = "Swap ; and , to be more meaningful on norwegian QWERTY" }
 lvim.keys.normal_mode[","] = { ";", desc = "Swap ; and , to be more meaningful on norwegian QWERTY" }
+lvim.keys.visual_mode[";"] = { ",", desc = "Swap ; and , to be more meaningful on norwegian QWERTY" }
+lvim.keys.visual_mode[","] = { ";", desc = "Swap ; and , to be more meaningful on norwegian QWERTY" }
 
 -- Setup Ruff LSP for formatting and diagnostics as described at
 -- https://github.com/LunarVim/LunarVim/discussions/3877
