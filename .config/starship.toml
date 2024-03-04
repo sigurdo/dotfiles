@@ -1,0 +1,62 @@
+# Get editor completions based on the config schema
+"$schema" = 'https://starship.rs/config-schema.json'
+
+# Inserts a blank line between shell prompts
+add_newline = false
+
+# format = '''
+# [┌───────────────────>](bold green)
+# [│](bold green)$directory$rust$package
+# [└─>](bold green) '''
+# format = "\\e[$LINES;H$all"
+
+# [custom.foo]
+# command = '/home/sigurd/.fish_greeting_utils/target/release/horizontal_line' # shows output of command
+# # detect_files = ['foo'] # can specify filters but wildcards are not supported
+# when = ''' test "$HOME" = "$HOME" '''
+# format = '[$output]($style)'
+
+# [custom.foo]
+# command = 'echo halla' # shows output of command
+# detect_files = ['foo'] # can specify filters but wildcards are not supported
+# when = ''' test "$HOME" = "$PWD" '''
+# format = ' transcending [$output]($style)'
+
+[line_break]
+disabled = false
+
+[directory]
+style = "yellow bold"
+# fish_style_pwd_dir_length = 1
+truncation_length = 8
+# truncation_symbol = '…/'
+# truncate_to_repo = false
+
+# [git_branch]
+# disabled = true
+
+# [git_commit]
+# disabled = true
+
+# [git_state]
+# disabled = true
+
+# [git_metrics]
+# disabled = true
+
+# [git_status]
+# disabled = true
+
+# Replace the '❯' symbol in the prompt with '➜'
+[character] # The name of the module we are configuring is 'character'
+success_symbol = '[>](bold green)' # The 'success_symbol' segment is being set to '➜' with the color 'bold green'
+error_symbol = '[>](bold red)' # The 'success_symbol' segment is being set to '➜' with the color 'bold green'
+
+# Disable the package module, hiding it from the prompt completely
+[package]
+disabled = true
+
+[status]
+disabled = false
+symbol = ""
+

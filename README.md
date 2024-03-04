@@ -94,6 +94,12 @@ cd ..
 sudo pacman -S zsh fish skim
 ```
 
+### Install starship prompt
+
+```
+sudo pacman -S starship
+```
+
 ### Configure zsh as default shell
 
 ```

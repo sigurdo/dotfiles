@@ -148,7 +148,8 @@ reset_cursor_style() {
 }
 
 move_cursor_to_bottom_left () {
-    printf "\e[$(expr $LINES - 1);H"
+    echo ""
+    printf "\e[$(expr $LINES - 2);$(expr 1)H"
 }
 
 hide_cursor() {
@@ -191,6 +192,7 @@ taktlaus() {
     PROMPT_LINE_THEME="taktlaus"
 }
 
+eval "$(starship init zsh)"
 PROMPT='%{$(move_cursor_to_bottom_left)%}'"%{$(reset_cursor_style)%}%{$(show_cursor)%}$PROMPT_LINE$PROMPT"
 # %{$(reset_cursor_style)%} # Not necessary when using vim bindings
 
