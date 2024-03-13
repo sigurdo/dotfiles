@@ -17,3 +17,9 @@ nnoremap ; ,
 vnoremap , ;
 vnoremap ; ,
 
+" Folding
+set foldmethod=indent
+set nofoldenable
+nnoremap z<space> za
+vnoremap z<space> za
+
