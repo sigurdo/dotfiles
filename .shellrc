@@ -49,13 +49,25 @@ then
     }
 fi
 
+if command -v nvim > /dev/null
+then
+    n() {
+        if [ "$#" -eq 0 ]
+        then
+            nvim .
+        else
+            nvim $@
+        fi
+    }
+fi
+
 alias serial="$HOME/.dotfiles/pyserial_interactive_connection.py"
 alias restart_wsl_usb_attach_loop="$HOME/.dotfiles/restart_wsl_usb_attach_loop.sh"
 alias wsl-sudo="$HOME/.dotfiles/wsl-sudo/wsl-sudo.py"
 alias wudo=wsl-sudo
 alias e=exa
 alias f=firefox
-alias n=nvim
+# alias n=nvim
 alias l=lvim
 alias s="sk --bind 'alt-h:backward-char,alt-j:down,alt-k:up,alt-l:forward-char'"
 alias ra=ranger
