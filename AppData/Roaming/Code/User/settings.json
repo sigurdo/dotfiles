@@ -90,7 +90,7 @@
     "latex-workshop.view.pdf.internal.synctex.keybinding": "double-click",
     "workbench.list.openMode": "doubleClick",
     "editor.acceptSuggestionOnEnter": "off",
-    "editor.wordBasedSuggestions": false,
+    "editor.wordBasedSuggestions": "off",
     "latex-workshop.texcount.autorun": "onSave",
     "[latex]": {
         "editor.defaultFormatter": "James-Yu.latex-workshop",
@@ -145,4 +145,5 @@
             "statusBar.background": "#31332b"
         },
     },
+    "workbench.activityBar.location": "hidden",
 }
