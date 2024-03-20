@@ -9,6 +9,7 @@ set number
 :source ~/.config/nvim/plugins/which-key.lua
 :source ~/.config/nvim/plugins/telescope.lua
 :source ~/.config/nvim/plugins/nvim-tree.lua
+:lua require("Comment").setup()
 :source ~/.config/nvim/lspconfig.lua
 
 set expandtab               " convert tabs to white space
