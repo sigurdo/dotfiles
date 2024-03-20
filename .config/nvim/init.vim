@@ -20,7 +20,10 @@ set relativenumber          " enables relative line numbers
 set mouse=""                " disables mouse
 
 " Set window title to ./path/to/filename - Neovim
-set title titlestring=%(%{expand(\"%:~:.:h\")}%)/%t\ –\ Neovim
+" set title titlestring=%(%{expand(\"%:~:.:h\")}%)/%t\ –\ Neovim
+" set title titlestring=%{%substitute(getcwd()
+set title titlestring=%{substitute(getcwd(),\ $HOME,\ '~',\ '')}\ –\ %t
+" set title titlestring=%{expand("#")}\ –\ %t
 
 " Swap ; and , to be more meaningful on norwegian QWERTY
 nnoremap , ;
