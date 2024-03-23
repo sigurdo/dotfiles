@@ -78,6 +78,9 @@ alias browsh="docker run -it browsh/browsh"
 alias gst='git status'
 alias gui='gitui'
 
+alias copy-wsl='win32yank.exe -i'
+alias paste-wsl='win32yank.exe -o'
+
 # Source local shellrc last so that it takes priority
 if [ -f $HOME/.local.shellrc ]
 then
