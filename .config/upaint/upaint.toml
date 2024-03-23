@@ -1,0 +1,34 @@
+# direction_keys = "HjklAndArrows"
+
+# [brush_keys]
+# fg = { Char = "f" }
+# bg = { Char = "b" }
+# character = { Char = "g" }
+# modifiers = { Char = "m" }
+# all = { Char = "a" }
+
+# # [color_theme]
+# # canvas_base = { add_modifier = "", sub_modifier = "" }
+# # status_bar = { add_modifier = "", sub_modifier = "" }
+
+# color_theme_preset = "Ubuntu"
+# color_theme_preset = "Monokai"
+
+[color_theme.status_bar]
+# fg = "Yellow"
+
+[color_theme.canvas_base]
+# bg = "#000000"
+# fg = "#ffff00"
+
+[[normal_mode_keybindings]]
+key = "H"
+modifiers = "SHIFT"
+action = "CursorLeftDoubleLong"
+
+[[normal_mode_keybindings]]
+key = "L"
+modifiers = "SHIFT"
+action = "CursorRightDoubleLong"
+
+
