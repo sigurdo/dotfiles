@@ -9,6 +9,7 @@ set number
 :source ~/.config/nvim/plugins/which-key.lua
 :source ~/.config/nvim/plugins/telescope.lua
 :source ~/.config/nvim/plugins/nvim-tree.lua
+:source ~/.config/nvim/plugins/diffview.lua
 :lua require("Comment").setup()
 :source ~/.config/nvim/lspconfig.lua
 
@@ -38,6 +39,12 @@ nnoremap z<space> za
 vnoremap z<space> za
 
 let mapleader = " "
+
+" Diff
+if &diff
+    nnoremap <C-n> ]c
+    nnoremap <C-p> [c
+endif
 
 :source ~/.config/nvim/keymaps.lua
 

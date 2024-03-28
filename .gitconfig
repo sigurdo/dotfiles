@@ -8,3 +8,7 @@
 [alias]
 	pusj = push
 	wip = commit --all -m "WIP"
+[diff]
+	tool = nvimdiff
+[difftool]
+	prompt = true

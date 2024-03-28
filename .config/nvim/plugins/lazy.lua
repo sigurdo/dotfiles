@@ -42,10 +42,27 @@ require("lazy").setup({
   "nvim-telescope/telescope.nvim",
 
   "nvim-tree/nvim-tree.lua",
+  "nvim-tree/nvim-web-devicons",
 
   -- { "neoclide/coc.nvim", branch = "release" },
 
   "numToStr/Comment.nvim",
+
+  "puremourning/vimspector",
+
+  "sindrets/diffview.nvim",
+
+    {
+      "NeogitOrg/neogit",
+      dependencies = {
+        "nvim-lua/plenary.nvim",         -- required
+        "sindrets/diffview.nvim",        -- optional - Diff integration
+
+        -- Only one of these is needed, not both.
+        "nvim-telescope/telescope.nvim", -- optional
+      },
+      config = true
+    }
 }, {
     ui = {
         size = { width = 1.0, height = 1.0 },

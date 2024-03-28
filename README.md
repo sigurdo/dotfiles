@@ -163,7 +163,7 @@ cd ..
 ### Install useful python packages
 
 ```
-pip install prompt-toolkit ptpython plac tomlkit black --break-system-packages
+pip install --break-system-packages prompt-toolkit ptpython plac tomlkit black neovim
 ```
 
 ### Install lunarvim
