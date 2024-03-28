@@ -69,6 +69,7 @@ alias e=exa
 alias f=firefox
 # alias n=nvim
 alias l=lvim
+alias u=upaint
 alias s="sk --bind 'alt-h:backward-char,alt-j:down,alt-k:up,alt-l:forward-char'"
 alias ra=ranger
 alias racd='ranger --choosedir=/tmp/newdir && cd "$(cat /tmp/newdir)"'
