@@ -1,0 +1,44 @@
+import = ['/home/sigurd/.config/alacritty/monokai_charcoal.toml']
+
+[colors]
+draw_bold_text_with_bright_colors = false
+
+[colors.bright]
+magenta = "#f332fa"
+
+[colors.normal]
+magenta = "#f332fa"
+black = "#181915"
+
+[colors.primary]
+# background = "#272822"
+background = "#181915"
+# background = "#262626"
+# background = "#553322"
+# background = "#e0e0e0"
+# foreground = "#000000"
+
+[colors.selection]
+background = "#636656"
+text = "CellForeground"
+
+[cursor.style]
+shape = "Beam"
+
+[font]
+size = 11.5
+
+[font.normal]
+# family = "CodeNewRoman Nerd Font Mono"
+family = "FiraCode Nerd Font"
+# famil  = "Consolas"
+# family = "MesloLGM NF"
+
+[[keyboard.bindings]]
+action = "ToggleFullscreen"
+key = "F11"
+
+[window]
+startup_mode = "Maximized"
+decorations = "none"
+# opacity = 0.6
