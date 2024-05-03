@@ -78,6 +78,7 @@ alias browsh="docker run -it browsh/browsh"
 
 alias gst='git status'
 alias gui='gitui'
+alias gg='git log --graph --all --date-order'
 
 alias copy-wsl='win32yank.exe -i'
 alias paste-wsl='win32yank.exe -o'
