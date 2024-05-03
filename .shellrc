@@ -80,6 +80,8 @@ alias gst='git status'
 alias gui='gitui'
 alias gg='git log --graph --all --date-order'
 
+alias nr='nvim -R -c "set nonumber norelativenumber"'
+
 alias copy-wsl='win32yank.exe -i'
 alias paste-wsl='win32yank.exe -o'
 

@@ -3,7 +3,6 @@
 wk.register({
     v = { "<C-S-v>", "Visual block mode" },
     e = { "<cmd>NvimTreeFindFile<CR>", "Explorer" },
-    E = { "<cmd>NvimTreeClose<CR>", "Close explorer" },
     f = { "<cmd>Telescope find_files<CR>", "Find file" },
     F = { "<cmd>Telescope live_grep<CR>", "Find pattern" },
     b = { "<cmd>Telescope buffers<CR>", "Buffers" },
@@ -20,6 +19,16 @@ wk.register({
         d = { "<cmd>lua vim.lsp.buf.definition()<CR>", "Definition" },
         t = { "<cmd>lua vim.lsp.buf.type_definition()<CR>", "Type definition" },
         r = { "<cmd>lua vim.lsp.buf.references()<CR>", "References" },
+    },
+    t = {
+        name = "Toggle",
+        e = { "<cmd>NvimTreeToggle<CR>", "Explorer" },
+        n = { "<cmd>set number! relativenumber!<CR>", "Line numbers" },
+    },
+    T = {
+        name = "Hide",
+        e = { "<cmd>NvimTreeClose<CR>", "Explorer" },
+        n = { "<cmd>set nonumber norelativenumber<CR>", "Line numbers" },
     },
 }, { prefix = "<leader>"}
 )
