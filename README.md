@@ -37,6 +37,12 @@ sudo pacman -S archlinux-keyring
 sudo pacman -Syu
 ```
 
+### Install window manager and other non-WSL utilities
+
+```
+sudo pacman -S river alacritty firefox ttf-firacode-nerd pamixer brightnessctl wl-clipboard
+```
+
 ### Clone this repo
 
 ```
@@ -74,6 +80,20 @@ sudo pacman -S rustup
 
 ```
 rustup toolchain install stable
+```
+
+### Install alacritty-smart-copy
+
+```
+git clone git@github.com:sigurdo/alacritty-smart-copy.git
+cd alacritty-smart-copy
+    cargo build --release
+    ln -s $(pwd)/target/release/alacritty /usr/bin/alacritty
+cd ..
+```
+
+```
+sudo pacman -R alacritty
 ```
 
 ### Install paru

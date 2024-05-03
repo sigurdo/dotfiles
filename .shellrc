@@ -25,12 +25,12 @@ register_wsl_alias_for_exe() {
     alias $ALIAS_NAME="call_exe_with_file_argument_wsl \"$EXE_PATH\""
 }
 
-register_wsl_alias_for_exe firefox '/mnt/c/Program Files/Mozilla Firefox/firefox.exe'
-register_wsl_alias_for_exe chrome 'C:\Program Files\Google\Chrome\Application\chrome.exe'
-register_wsl_alias_for_exe edge 'C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe'
+# register_wsl_alias_for_exe firefox '/mnt/c/Program Files/Mozilla Firefox/firefox.exe'
+# register_wsl_alias_for_exe chrome 'C:\Program Files\Google\Chrome\Application\chrome.exe'
+# register_wsl_alias_for_exe edge 'C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe'
 register_wsl_alias_for_exe paintdotnet 'C:\Program Files\paint.net\paintdotnet.exe'
-register_wsl_alias_for_exe adobe 'C:\Program Files\Adobe\Acrobat DC\Acrobat\Acrobat.exe'
-register_wsl_alias_for_exe gimp 'C:\Program Files\GIMP 2\bin\gimp-2.10.exe'
+# register_wsl_alias_for_exe adobe 'C:\Program Files\Adobe\Acrobat DC\Acrobat\Acrobat.exe'
+# register_wsl_alias_for_exe gimp 'C:\Program Files\GIMP 2\bin\gimp-2.10.exe'
 register_wsl_alias_for_exe notepad '/mnt/c/Windows/notepad.exe'
 register_wsl_alias_for_exe explorer '/mnt/c/Windows/explorer.exe'
 
@@ -78,12 +78,14 @@ alias browsh="docker run -it browsh/browsh"
 
 alias gst='git status'
 alias gui='gitui'
-alias gg='git log --graph --all --date-order'
+alias gg='git log --graph --date-order'
 
 alias nr='nvim -R -c "set nonumber norelativenumber"'
 
 alias copy-wsl='win32yank.exe -i'
 alias paste-wsl='win32yank.exe -o'
+alias copy-wayland='wl-copy'
+alias paste-wayland='wl-paste'
 
 # Source local shellrc last so that it takes priority
 if [ -f $HOME/.local.shellrc ]
