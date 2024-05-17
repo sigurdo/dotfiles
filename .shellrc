@@ -55,6 +55,7 @@ then
         if [ "$#" -eq 0 ]
         then
             nvim .
+            # screen -dm alacritty.exe -e wsl.exe -d $WSL_DISTRO_NAME -e nvim .
         else
             nvim $@
         fi

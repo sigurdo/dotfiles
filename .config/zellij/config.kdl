@@ -1,4 +1,7 @@
 default_layout "compact"
+pane_frames false
+copy_on_select false
+scrollback_editor "nvim"
 
 keybinds {
     unbind "Ctrl g" "Ctrl p" "Ctrl n" "Ctrl s" "Ctrl o" "Ctrl t" "Ctrl h" "Ctrl b" "Ctrl q"
@@ -19,12 +22,16 @@ keybinds {
         bind "t" { SwitchToMode "Tab"; }
         bind "h" { SwitchToMode "Move"; }
         bind "b" { SwitchToMode "Tmux"; }
+        bind "f" { SwitchToMode "EnterSearch"; SearchInput 0; }
+        bind "s" { TogglePaneFrames; SwitchToMode "Normal"; }
         // bind "q" { Quit; }
     }
     move {
         bind "H" { BreakPaneLeft; }
         bind "L" { BreakPaneRight; }
         bind "b" { BreakPane; }
+        bind "," { MoveTab "Left"; }
+        bind "." { MoveTab "Right"; }
     }
     locked {
         bind "Esc" { SwitchToMode "Normal"; } 
@@ -49,5 +56,8 @@ keybinds {
     }
     shared_except "normal" "locked" {
         bind "q" { SwitchToMode "Normal"; }
+    }
+    shared_except "normal" {
+        bind "Ctrl c" { Copy; }
     }
 }
