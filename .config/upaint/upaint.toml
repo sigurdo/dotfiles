@@ -14,6 +14,12 @@
 # color_theme_preset = "Ubuntu"
 # color_theme_preset = "Monokai"
 
+[numbers.row]
+relative = false
+
+[numbers.column]
+relative = false
+
 [color_theme.status_bar]
 # fg = "Yellow"
 
@@ -30,5 +36,4 @@ action = "CursorLeftDoubleLong"
 key = "L"
 modifiers = "SHIFT"
 action = "CursorRightDoubleLong"
-
 

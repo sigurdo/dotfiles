@@ -47,6 +47,17 @@ nmap Dw <cmd>call vimspector#AddWatch()<cr>
 nmap De <cmd>call vimspector#Evaluate()<cr>
 ]])
 
+if vim.bo[vim.api.nvim_win_get_buf(0)].readonly then
+    local presets = require("which-key.plugins.presets")
+    presets.operators["d"] = nil
+    wk.register({
+        u = { "<c-u>", "Up half screen" },
+        d = { "<c-d>", "Down half screen" },
+    }, {})
+    vim.cmd([[
+        set clipboard+=unnamedplus
+    ]])
+end
 
 
 

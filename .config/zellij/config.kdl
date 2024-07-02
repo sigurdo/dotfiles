@@ -15,9 +15,9 @@ keybinds {
         bind "c" { SwitchToMode "RenameTab"; TabNameInput 0; }
     }
     scroll {
-        bind "l" { SwitchToMode "Locked"; }
+        bind "g" { SwitchToMode "Locked"; }
         bind "p" { SwitchToMode "Pane"; }
-        bind "n" { SwitchToMode "Resize"; }
+        bind "r" { SwitchToMode "Resize"; }
         bind "o" { SwitchToMode "Session"; }
         bind "t" { SwitchToMode "Tab"; }
         bind "m" { SwitchToMode "Move"; }
@@ -41,6 +41,8 @@ keybinds {
     shared_except "locked" {
         bind "Alt q" { CloseFocus; }
         bind "Alt n" { NewTab; }
+        bind "Alt u" { HalfPageScrollUp; }
+        bind "Alt d" { HalfPageScrollDown; }
         bind "Alt 1" { GoToTab 1; }
         bind "Alt 2" { GoToTab 2; }
         bind "Alt 3" { GoToTab 3; }
