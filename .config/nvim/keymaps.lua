@@ -9,8 +9,11 @@ wk.register({
     m = { "<cmd>Telescope marks<CR>", "Marks" },
     h = { "<cmd>lua vim.lsp.buf.hover()<CR>", "Hover" },
     r = { "<cmd>lua vim.lsp.buf.rename()<CR>", "Rename" },
-    l = { "o<Esc>k", "Insert empty line below" },
-    L = { "O<Esc>", "Insert empty line above" },
+    c = {
+        name = "Code actions",
+        f = { "<cmd>lua vim.lsp.buf.format()<CR>", "Format" },
+        o = { "<cmd>lua vim.lsp.buf.code_action()<CR>", "Other" },
+    },
     d = { "<cmd>DiffviewOpen<CR>", "Open diffview" },
     D = { "<cmd>DiffviewClose<CR>", "Close diffview" },
     g = { "<cmd>Neogit<CR>", "Neogit" },

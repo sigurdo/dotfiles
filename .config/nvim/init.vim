@@ -48,3 +48,6 @@ endif
 
 :source ~/.config/nvim/keymaps.lua
 
+" Format on save
+autocmd BufWritePre * lua vim.lsp.buf.format()
+
