@@ -62,6 +62,10 @@ then
     }
 fi
 
+rgd() {
+    rg -C 3 --json $@ | delta
+}
+
 alias serial="$HOME/.dotfiles/pyserial_interactive_connection.py"
 alias restart_wsl_usb_attach_loop="$HOME/.dotfiles/restart_wsl_usb_attach_loop.sh"
 alias wsl-sudo="$HOME/.dotfiles/wsl-sudo/wsl-sudo.py"
