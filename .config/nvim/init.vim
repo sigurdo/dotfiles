@@ -28,9 +28,18 @@ set title titlestring=%{substitute(getcwd(),\ $HOME,\ '~',\ '')}\ –\ %t
 
 " Swap ; and , to be more meaningful on norwegian QWERTY
 nnoremap , ;
-nnoremap ; ,
 vnoremap , ;
+nnoremap ; ,
 vnoremap ; ,
+
+" More ergonomic to use ø for jumping to start and end of line
+nnoremap ø $
+vnoremap ø $
+nnoremap Ø ^
+vnoremap Ø ^
+
+" More ergonomic to use æ to jump to a mark
+nnoremap æ `
 
 " Folding
 set foldmethod=indent
@@ -51,3 +60,5 @@ endif
 " Format on save
 autocmd BufWritePre * lua vim.lsp.buf.format()
 
+" Code block syntax highlighting markdown
+let g:markdown_fenced_languages = ['rust', 'html', 'python', 'lua', 'vim', 'typescript', 'javascript']

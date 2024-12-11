@@ -27,6 +27,7 @@ wk.register({
         name = "Toggle",
         e = { "<cmd>NvimTreeToggle<CR>", "Explorer" },
         n = { "<cmd>set number! relativenumber!<CR>", "Line numbers" },
+        d = { "<cmd>lua vim.diagnostic.enable(not vim.diagnostic.is_enabled())<CR>" , "Diagnostic" },
     },
     T = {
         name = "Hide",
@@ -35,6 +36,11 @@ wk.register({
     },
 }, { prefix = "<leader>"}
 )
+
+-- wk.register({
+--     ø = { "$", "Jump to end of line" },
+--     Ø = { "^", "Jump to start of line" },
+-- })
 
 -- Vimspector
 vim.cmd([[
