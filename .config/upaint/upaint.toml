@@ -14,7 +14,14 @@
 # color_theme_preset = "Ubuntu"
 # color_theme_preset = "Monokai"
 
+# autoreload_config = false
+# [keymaps.actions]
+# " r" = { ReloadConfig = {} }
+
+message_popup_suppress_keystroke = false
+
 [numbers.row]
+enable = true
 relative = false
 
 [numbers.column]
@@ -27,13 +34,15 @@ relative = false
 # bg = "#000000"
 # fg = "#ffff00"
 
-[[normal_mode_keybindings]]
-key = "H"
-modifiers = "SHIFT"
-action = "CursorLeftDoubleLong"
+[input_mode.n.keymaps.actions]
+" q" = { Quit = {} }
+" 1" = { ForceQuit = {} }
+" w" = { Save = {} }
+" x" = { SaveQuit = {} }
 
-[[normal_mode_keybindings]]
-key = "L"
-modifiers = "SHIFT"
-action = "CursorRightDoubleLong"
+[input_mode.n.keymaps.motions]
+# Shortcut intended for drawing lines more quickly
+"L" = { GoToMark = { jump = "Diagonals", slot = "l" } }
+
+[input_mode.n.keymaps.continuous_region_relative_types]
 

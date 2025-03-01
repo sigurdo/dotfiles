@@ -1,5 +1,5 @@
 set number
-" :source ~/.config/nvim/config.lua
+:source ~/.config/nvim/config.lua
 :source ~/.config/nvim/load_colorscheme.lua
 
 :source ~/.config/nvim/plugins/lazy.lua
@@ -10,6 +10,7 @@ set number
 :source ~/.config/nvim/plugins/telescope.lua
 :source ~/.config/nvim/plugins/nvim-tree.lua
 :source ~/.config/nvim/plugins/diffview.lua
+:source ~/.config/nvim/plugins/treesitter.lua
 :lua require("Comment").setup()
 :source ~/.config/nvim/lspconfig.lua
 
@@ -41,6 +42,12 @@ vnoremap Ø ^
 " More ergonomic to use æ to jump to a mark
 nnoremap æ `
 
+map s "_d
+
+" Force quit all buffers
+nnoremap <leader>1 <cmd>qa!<CR>
+nnoremap <leader>5 <cmd>so $MYVIMRC<CR>
+
 " Folding
 set foldmethod=indent
 set nofoldenable
@@ -62,3 +69,19 @@ autocmd BufWritePre * lua vim.lsp.buf.format()
 
 " Code block syntax highlighting markdown
 let g:markdown_fenced_languages = ['rust', 'html', 'python', 'lua', 'vim', 'typescript', 'javascript']
+
+" Return to last position when opening file
+" Credz: https://github.com/amix/vimrc/blob/master/vimrcs/basic.vim
+au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+
+" Custom WSL clipboard (~/.wsl-clipboard)
+let g:clipboard = {
+    \ 'name': 'myClipboard',
+    \ 'copy': {
+    \     '+': ['wsl-yank'],
+    \ },
+    \ 'paste': {
+    \     '+': ['wsl-paste'],
+    \ },
+    \ 'cache_enabled': 1,
+    \ }

@@ -53,6 +53,10 @@ require("lazy").setup({
   "sindrets/diffview.nvim",
 
     {
+        "nvim-treesitter/nvim-treesitter",
+        run = ':TSUpdate'
+    },
+    {
       "NeogitOrg/neogit",
       dependencies = {
         "nvim-lua/plenary.nvim",         -- required

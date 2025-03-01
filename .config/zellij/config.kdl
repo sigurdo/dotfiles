@@ -29,9 +29,9 @@ keybinds {
     move {
         bind "H" { BreakPaneLeft; }
         bind "L" { BreakPaneRight; }
-        bind "b" { BreakPane; }
-        bind "p" { MoveTab "Left"; }
-        bind "n" { MoveTab "Right"; }
+        bind "n" { BreakPane; }
+        bind "h" { MoveTab "Left"; }
+        bind "l" { MoveTab "Right"; }
         bind "m" { MovePane; }
         bind "M" { MovePaneBackwards; }
     }

@@ -87,6 +87,9 @@ alias gg='git log --graph --date-order'
 
 alias nr='nvim -R -c "set nonumber norelativenumber"'
 
+alias cb='cargo build --color always 2>&1 | less -R'
+alias cr='cargo run'
+
 alias copy-wsl='win32yank.exe -i'
 alias paste-wsl='win32yank.exe -o'
 alias copy-wayland='wl-copy'
