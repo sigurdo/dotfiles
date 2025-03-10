@@ -49,6 +49,19 @@ then
     }
 fi
 
+# Alias h to "helix ." if helix is installed
+if command -v helix > /dev/null
+then
+    h() {
+        if [ "$#" -eq 0 ]
+        then
+            helix .
+        else
+            helix $@
+        fi
+    }
+fi
+
 if command -v nvim > /dev/null
 then
     n() {

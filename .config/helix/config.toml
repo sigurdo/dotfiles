@@ -1,0 +1,36 @@
+theme = "monokai_sigurdo"
+
+[editor]
+"true-color" = true
+end-of-line-diagnostics = "hint"
+
+[editor.cursor-shape]
+insert = "bar"
+select = "underline"
+
+[editor.inline-diagnostics]
+cursor-line = "warning"
+# other-lines = "error"
+
+[editor.search]
+smart-case = false
+
+[keys.insert]
+C-n = "normal_mode"
+
+[keys.select]
+C-n = "normal_mode"
+
+[keys.normal."ø"]
+q = ":quit"
+w = ":write"
+r = ":config-reload"
+
+[keys.normal.z]
+u = "page_cursor_half_up"
+d = "page_cursor_half_down"
+
+[keys.normal.Z]
+u = "page_cursor_half_up"
+d = "page_cursor_half_down"
+q = "normal_mode"

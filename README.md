@@ -138,10 +138,10 @@ paru -S toilet
 sudo pacman -S usbip
 ```
 
-### Install neovim
+### Install code editors
 
 ```
-sudo pacman -S neovim
+sudo pacman -S neovim helix
 ```
 
 ### Install nice rust replacements for basic command line tools
