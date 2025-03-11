@@ -17,14 +17,26 @@ smart-case = false
 
 [keys.insert]
 C-n = "normal_mode"
+C-c = "normal_mode"
 
 [keys.select]
 C-n = "normal_mode"
+C-c = "normal_mode"
+
+[keys.normal]
+X = "extend_line_above"
+C-c = "collapse_selection"
+K = "expand_selection"
+J = "shrink_selection"
+L = "select_next_sibling"
+H = "select_prev_sibling"
 
 [keys.normal."ø"]
 q = ":quit"
 w = ":write"
 r = ":config-reload"
+k = "keep_selections"
+j = "join_selections"
 
 [keys.normal.z]
 u = "page_cursor_half_up"
@@ -33,4 +45,5 @@ d = "page_cursor_half_down"
 [keys.normal.Z]
 u = "page_cursor_half_up"
 d = "page_cursor_half_down"
+# Doesn't do anything, since resetting the mode doesn't clear the sticky submode
 q = "normal_mode"

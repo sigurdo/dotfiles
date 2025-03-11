@@ -15,7 +15,7 @@ keybinds {
         bind "c" { SwitchToMode "RenameTab"; TabNameInput 0; }
     }
     scroll {
-        bind "g" { SwitchToMode "Locked"; }
+        bind "l" { SwitchToMode "Locked"; }
         bind "p" { SwitchToMode "Pane"; }
         bind "r" { SwitchToMode "Resize"; }
         bind "o" { SwitchToMode "Session"; }
