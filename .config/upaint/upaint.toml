@@ -39,6 +39,10 @@ relative = false
 " 1" = { ForceQuit = {} }
 " w" = { Save = {} }
 " x" = { SaveQuit = {} }
+"øq" = { Quit = {} }
+"ø1" = { ForceQuit = {} }
+"øw" = { Save = {} }
+"øx" = { SaveQuit = {} }
 
 [input_mode.n.keymaps.motions]
 # Shortcut intended for drawing lines more quickly
