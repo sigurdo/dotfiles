@@ -80,6 +80,8 @@ sudo pacman -S rustup
 
 ```
 rustup toolchain install stable
+rustup component add rust-analyzer
+cargo install --locked evcxr_repl
 ```
 
 ### Install alacritty-smart-copy

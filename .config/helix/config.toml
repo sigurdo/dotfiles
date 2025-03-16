@@ -15,6 +15,12 @@ cursor-line = "warning"
 [editor.search]
 smart-case = false
 
+[editor.clipboard-provider.custom]
+# yank = { command = "wsl-yank", args = [] }
+# paste = { command = "wsl-paste", args = [] }
+yank = { command = "cat",  args = ["/home/sigurd/.wsl-clipboard"] }
+paste = { command = "tee",  args = ["/home/sigurd/.wsl-clipboard"] }
+
 [keys.insert]
 C-n = "normal_mode"
 C-k = "normal_mode"
@@ -35,11 +41,15 @@ H = "select_prev_sibling"
 
 [keys.normal."ø"]
 q = ":quit"
+Q = ":quit-all"
 w = ":write"
+W = ":write-all"
 x = ":write-quit"
+X = ":write-quit-all"
 r = ":config-reload"
 k = "keep_selections"
 j = "join_selections"
+o = "flip_selections"
 
 [keys.normal.z]
 u = "page_cursor_half_up"
