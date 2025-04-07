@@ -1,0 +1,19 @@
+#!/bin/sh
+set -e
+cd $(dirname $0)
+
+# Reload config
+riverctl map normal Super r spawn "$(pwd)/config"
+# Start terminal session
+riverctl map normal Super Space spawn 'alacritty -e zellij'
+riverctl map normal Super a spawn "alacritty -o 'font.size = 14' -e zellij"
+# Start firefox
+riverctl map normal Super f spawn firefox
+# Start file explorer
+riverctl map normal Super e spawn 'alacritty -e yazi'
+
+# Alt+Tab
+riverctl map normal Alt Tab focus-previous-tags
+
+# Background color
+riverctl background-color 0x181915
