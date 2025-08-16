@@ -1,3 +1,19 @@
 inherits = "monokai"
 
-"ui.background".bg = "#181915"
+[palette]
+# type = "#A6E22E"
+# keyword = "#F92672"
+# regex = "#CE9178"
+# special = "#C586C0"
+# variable = "#F8F8F2"
+# fn_declaration = "#A6E22E"
+
+background = "#181915"
+# text = "#f8f8f2"
+# active_text = "#ffffff"
+# cursor = "#a6a6a6"
+# inactive_cursor = "#878b91"
+# widget = "#1e1f1c"
+# selection = "#414339"
+# tag = "#F92672"
+

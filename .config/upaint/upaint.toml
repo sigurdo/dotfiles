@@ -35,6 +35,7 @@ relative = false
 # fg = "#ffff00"
 
 [input_mode.n.keymaps.actions]
+"<C-k>" = { ChangeMode = { mode = "n" }}
 " q" = { Quit = {} }
 " 1" = { ForceQuit = {} }
 " w" = { Save = {} }
@@ -43,6 +44,11 @@ relative = false
 "ø1" = { ForceQuit = {} }
 "øw" = { Save = {} }
 "øx" = { SaveQuit = {} }
+"ør" = { ReloadConfig = {} }
+
+[input_mode.n.keymaps.actions_repeatable]
+"U" = { "Redo" = {} }
+
 
 [input_mode.n.keymaps.motions]
 # Shortcut intended for drawing lines more quickly

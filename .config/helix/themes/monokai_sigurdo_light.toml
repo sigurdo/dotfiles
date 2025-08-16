@@ -1,0 +1,24 @@
+inherits = "monokai"
+
+# "string.fg" = "#"
+"string" = { fg = "#b28f18" }
+"comment" = { fg = "#a49e93" }
+"ui.statusline" = { fg = "active_text", bg = "#eae9e7" }
+
+[palette]
+type = "#82b423"
+# keyword = "#F92672"
+# regex = "#CE9178"
+# special = "#C586C0"
+variable = "#000000"
+fn_declaration = "#82b423"
+
+background = "#ffffff"
+text = "#000000"
+active_text = "#000000"
+# cursor = "#a6a6a6"
+# inactive_cursor = "#878b91"
+widget = "#ffffff"
+# selection = "#414339"
+# tag = "#F92672"
+
