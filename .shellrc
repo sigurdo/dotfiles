@@ -110,6 +110,17 @@ alias cb='cargo build --color always 2>&1 | less -R'
 alias cr='cargo run'
 alias rust='evcxr'
 
+alias ri=riverctl
+# alias ris='riverctl spawn'
+if command -v riverctl > /dev/null
+then
+    ris() {
+        riverctl spawn-tagmask 10
+        riverctl spawn "$@"
+        riverctl close
+    }
+fi
+
 alias copy-wsl='win32yank.exe -i'
 alias paste-wsl='win32yank.exe -o'
 alias copy-wayland='wl-copy'

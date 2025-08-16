@@ -30,7 +30,8 @@ sudo su sigurd
 ```
 
 ```
-sudo pacman -S archlinux-keyring
+sudo pacman-key --refresh-keys
+sudo pacman -S archlinux-keyring pacman-mirrorlist
 ```
 
 ```
