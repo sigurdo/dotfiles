@@ -1,4 +1,8 @@
-import = ['/home/sigurd/.config/alacritty/monokai_charcoal.toml']
+general.import = ['monokai_charcoal.toml']
+
+[terminal]
+# shell = "/home/linuxbrew/.linuxbrew/bin/zsh"
+shell = "/home/sigi/bin/zellij"
 
 [colors]
 draw_bold_text_with_bright_colors = false

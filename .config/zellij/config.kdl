@@ -2,6 +2,7 @@ default_layout "compact"
 pane_frames false
 copy_on_select false
 scrollback_editor "nvim"
+default_shell "/home/sigi/launch_shell.sh"
 
 keybinds {
     unbind "Ctrl g" "Ctrl p" "Ctrl n" "Ctrl s" "Ctrl o" "Ctrl t" "Ctrl h" "Ctrl b" "Ctrl q"
