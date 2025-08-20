@@ -2,7 +2,8 @@ general.import = ['monokai_charcoal.toml']
 
 [terminal]
 # shell = "/home/linuxbrew/.linuxbrew/bin/zsh"
-shell = "/home/sigi/bin/zellij"
+# shell = "/home/sigi/bin/zellij"
+shell = "/home/sigi/launch_shell.sh"
 
 [colors]
 draw_bold_text_with_bright_colors = false
