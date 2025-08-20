@@ -22,3 +22,6 @@
 [submodule ".config/nvim/pack/sigurd/start/monokai.nvim"]
 	path = .config/nvim/pack/sigurd/start/monokai.nvim
 	url = https://github.com/sigurdo/monokai.nvim.git
+[submodule ".config/upaint_ron"]
+	path = .config/upaint_ron
+	url = git@github.com:sigurdo/upaint_custom_config.git
