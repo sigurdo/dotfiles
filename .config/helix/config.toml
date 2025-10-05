@@ -15,24 +15,32 @@ cursor-line = "warning"
 [editor.search]
 smart-case = false
 
-[editor.clipboard-provider.custom]
+# [editor.clipboard-provider.custom]
 # yank = { command = "wsl-yank", args = [] }
 # paste = { command = "wsl-paste", args = [] }
-yank = { command = "cat",  args = ["/home/sigurd/.wsl-clipboard"] }
-paste = { command = "tee",  args = ["/home/sigurd/.wsl-clipboard"] }
+# yank = { command = "cat",  args = ["/home/sigurd/.wsl-clipboard"] }
+# paste = { command = "tee",  args = ["/home/sigurd/.wsl-clipboard"] }
+
+[editor.soft-wrap]
+enable = true
 
 [keys.insert]
-C-n = "normal_mode"
-C-k = "normal_mode"
+C-m = "normal_mode"
 C-c = "normal_mode"
+C-u = "kill_to_line_start"
 
 [keys.select]
-C-n = "normal_mode"
-C-k = "normal_mode"
+C-m = "normal_mode"
 C-c = "normal_mode"
+x = "extend_to_line_bounds"
+D = "delete_selection_noyank"
+o = "flip_selections"
+C-j = ["extend_to_line_bounds", "delete_selection", "paste_after"]
+C-k = ["extend_to_line_bounds", "delete_selection", "move_line_up", "paste_before"]
 
 [keys.normal]
-X = "extend_line_above"
+x = "extend_to_line_bounds"
+D = "delete_selection_noyank"
 C-c = "collapse_selection"
 K = "expand_selection"
 J = "shrink_selection"
@@ -62,6 +70,14 @@ u = "page_cursor_half_up"
 d = "page_cursor_half_down"
 # Doesn't do anything, since resetting the mode doesn't clear the sticky submode
 q = "normal_mode"
+
+[keys.select.g]
+s = "goto_file_start"
+h = "goto_first_nonwhitespace"
+0 = "goto_line_start"
+k = "goto_window_top"
+j = "goto_window_bottom"
+"ø" = "goto_window_center"
 
 [keys.normal.g]
 s = "goto_file_start"
