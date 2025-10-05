@@ -126,6 +126,10 @@ alias paste-wsl='win32yank.exe -o'
 alias copy-wayland='wl-copy'
 alias paste-wayland='wl-paste'
 
+alias csol='CMAKE_INCLUDE_PATH=/home/linuxbrew/.linuxbrew/Cellar/ncurses/6.5/include
+ CMAKE_LIBRARY_PATH=/home/linuxbrew/.linuxbrew/Cellar/ncurses/6.5/lib
+ /home/sigi/csol/csol -c /home/sigi/csol/csolrc'
+
 # Source local shellrc last so that it takes priority
 if [ -f $HOME/.local.shellrc ]
 then
